@@ -17,17 +17,31 @@ collections:
     path: "{{title}}/index"
     editor:
       preview: true 
+    view_groups:
+      - label: Category
+        field: category
+      - label: Topic
+        field: topic
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Category", name: "category", widget: "select",
-      options: {
-        - {label: "Writing", value: "writing"}
-        - {label: "Poetry", value: "poetry"}
-        - {label: "Tutorial", value: "tutorial"}
-      } }
-      - { label: "Topic", name: "topic", widget: "select", 
-      options: ["general", "design", "finance", "relationship", "cooking", "craft", "faith", "communication"],
-      default: ["general"]}
+      - { 
+          label: "Category", 
+          name: "category", 
+          widget: "select", 
+          options: 
+            {
+              - {label: "Writing", value: "writing"}
+              - {label: "Poetry", value: "poetry"}
+              - {label: "Tutorial", value: "tutorial"}
+            } 
+        }
+      - { 
+          label: "Topic", 
+          name: "topic", 
+          widget: "select", 
+          options: ["general", "design", "finance", "relationship", "cooking", "craft", "faith", "communication"],
+          default: ["general"]
+        }
       - { label: "Featured Image", name: "thumbnail", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
