@@ -1,14 +1,23 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `The Average Malaysian`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      author: [
+        {
+          name: `Benjamin`,
+          summary: `who lives and works in Sentul, Kuala Lumpur serving urban poor children. Married to Huey Lin.`,
+        },
+        {
+          name: `Huey Lin`,
+          summary: `who lives and works in Sentul, Kuala Lumpur serving urban poor children. Married to Benjamin.`,
+        },
+      ],
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+
+    description: `A blog by and for the Average Malaysian.`,
+    siteUrl: `https://theaveragemalaysian.com/`,
     social: {
-      twitter: `kylemathews`,
+      youtube: `UC6cpBoxdvVpMNz2u_NMHMJw`,
     },
   },
   plugins: [
@@ -112,8 +121,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `The Average Malaysian`,
+        short_name: `The 'A' Malaysian`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,

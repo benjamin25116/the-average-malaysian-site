@@ -9,17 +9,19 @@ import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
-const Bio = () => {
+const Bio = ({ benjamin, huey_lin }) => {
   const data = useStaticQuery(graphql`
     query BioQuery {
       site {
         siteMetadata {
           author {
-            name
-            summary
+            author {
+              name
+              summary
+            }
           }
           social {
-            twitter
+            youtube
           }
         }
       }
@@ -27,30 +29,89 @@ const Bio = () => {
   `)
 
   // Set these values by editing "siteMetadata" in gatsby-config.js
-  const author = data.site.siteMetadata?.author
+  const [ben] = data.site.siteMetadata?.author.author.filter(
+    author => author.name === "Benjamin"
+  )
+  const [lin] = data.site.siteMetadata?.author.author.filter(
+    author => author.name === "Huey Lin"
+  )
   const social = data.site.siteMetadata?.social
 
+  if (benjamin) {
+    return (
+      <div className="bio">
+        <StaticImage
+          className="bio-avatar"
+          layout="fixed"
+          formats={["auto", "webp", "avif"]}
+          src="../images/ben.jpg"
+          width={50}
+          height={50}
+          quality={95}
+          alt="Profile picture"
+        />
+        {ben.name && (
+          <p>
+            Written by <strong>{ben.name}</strong> {ben.summary || null}
+            {` `}
+            <a
+              href={`https://www.youtube.com/channel/${social?.youtube || ``}`}
+            >
+              Check out their YouTube channel.
+            </a>
+          </p>
+        )}
+      </div>
+    )
+  }
+  if (huey_lin) {
+    return (
+      <div className="bio">
+        <StaticImage
+          className="bio-avatar"
+          layout="fixed"
+          formats={["auto", "webp", "avif"]}
+          src="../images/huey-lin.jpg"
+          width={50}
+          height={50}
+          quality={95}
+          alt="Profile picture"
+        />
+        {lin.name && (
+          <p>
+            Written by <strong>{lin.name}</strong> {lin.summary || null}
+            {` `}
+            <a
+              href={`https://www.youtube.com/channel/${social?.youtube || ``}`}
+            >
+              Check out their YouTube channel.
+            </a>
+          </p>
+        )}
+      </div>
+    )
+  }
   return (
     <div className="bio">
       <StaticImage
         className="bio-avatar"
         layout="fixed"
         formats={["auto", "webp", "avif"]}
-        src="../images/profile-pic.png"
+        src="../images/ben-huey-lin.jpg"
         width={50}
         height={50}
         quality={95}
         alt="Profile picture"
       />
-      {author?.name && (
-        <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}
-          {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
-            You should follow them on Twitter
-          </a>
-        </p>
-      )}
+
+      <p>
+        Written by <strong>Ben and Huey Lin</strong> who lives and works in
+        Sentul, Kuala Lumpur serving urban poor children.
+        {` `}
+        <a href={`https://www.youtube.com/channel/${social?.youtube || ``}`}>
+          Check out their YouTube channel.
+        </a>
+      </p>
     </div>
   )
 }

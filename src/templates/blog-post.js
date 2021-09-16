@@ -25,13 +25,18 @@ const BlogPostTemplate = ({ data, location }) => {
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
         </header>
+        <pre>{JSON.stringify(data, null, 2)}</pre>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
         <hr />
         <footer>
-          <Bio />
+          {data.markdownRemark.frontmatter.author === "Benjamin" ? (
+            <Bio benjamin />
+          ) : (
+            <Bio huey_lin />
+          )}
         </footer>
       </article>
       <nav className="blog-post-nav">
@@ -83,7 +88,8 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        author
+        date(formatString: "D MMMM, YYYY")
         description
       }
     }
