@@ -9,7 +9,7 @@ collections:
   - name: "writing"
     label: "Writing"
     label_singular: "Writing"
-    folder: "content"
+    folder: "content/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     path: "{{title}}/index"
