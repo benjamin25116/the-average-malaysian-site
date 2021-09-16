@@ -1,0 +1,33 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+
+publish_mode: editorial_workflow
+
+media_folder: static/img
+# public_folder: /img
+
+collections:
+  - name: "writing"
+    label: "Writing"
+    label_singular: "Writing"
+    folder: "content"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    path: "{{title}}/index"
+    editor:
+      preview: true 
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Category", name: "category", widget: "select",
+      options: {
+        - {label: "Writing", value: "writing"}
+        - {label: "Poetry", value: "poetry"}
+        - {label: "Tutorial", value: "tutorial"}
+      } }
+      - { label: "Topic", name: "topic", widget: "select", 
+      options: ["general", "design", "finance", "relationship", "cooking", "craft", "faith", "communication"],
+      default: ["general"]}
+      - { label: "Featured Image", name: "thumbnail", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
