@@ -16,7 +16,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     path: "{{title}}/index"
     editor:
-      preview: true 
+      preview: true
     view_groups:
       - label: Category
         field: category
@@ -25,23 +25,35 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - { 
-          label: "Category", 
-          name: "category", 
-          widget: "select", 
-          options: 
-            {
-              - {label: "Writing", value: "writing"}
-              - {label: "Poetry", value: "poetry"}
-              - {label: "Tutorial", value: "tutorial"}
-            } 
+      - {
+          label: "Category",
+          name: "category",
+          widget: "select",
+          options: ["writing", "poetry", "tutorial"],
         }
-      - { 
-          label: "Topic", 
-          name: "topic", 
-          widget: "select", 
-          options: ["general", "design", "finance", "relationship", "cooking", "craft", "faith", "communication"],
-          default: ["general"]
+      - {
+          label: "Topic",
+          name: "topic",
+          widget: "select",
+          options:
+            [
+              "general",
+              "design",
+              "finance",
+              "relationship",
+              "cooking",
+              "craft",
+              "faith",
+              "communication",
+            ],
+          default: ["general"],
         }
       - { label: "Featured Image", name: "thumbnail", widget: "image" }
+      - {
+          label: "Author",
+          name: "author",
+          widget: "select",
+          options: ["Benjamin", "Huey Lin"],
+          default: ["Benjamin"],
+        }
       - { label: "Body", name: "body", widget: "markdown" }
