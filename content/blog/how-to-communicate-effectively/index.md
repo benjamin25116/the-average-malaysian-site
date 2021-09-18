@@ -63,7 +63,3 @@ When answering an email, do you have the discipline to answer it point-by-point 
 > “Discipline is the foundation upon which all success is built. Lack of discipline inevitably leads to failure.”
 >
 > **—Jim Rohn**
-
-*• • •* 
-
-*Creative Lead by day, writer by night, husband and dad throughout. I write about things that interest me and lessons I’ve learnt. My views are my own. Check out [other things](https://medium.com/@benjamin25116) I’ve written.*
