@@ -37,7 +37,3 @@ So what do you do then? Get feedback from the people who matter to the project: 
 ## The end
 
 So that’s my take on how to graphic design. What are your thoughts on the points above? Feel free to agree or disagree and let me know in the responses below.
-
-• • •
-
-*Creative Lead by day, writer by night, husband and dad throughout. I write about things that interest me and lessons I’ve learnt. My views are my own. Check out [other things](https://medium.com/@benjamin25116) I’ve written.*
