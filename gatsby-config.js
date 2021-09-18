@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `The Average Malaysian`,
+    title: `the a.m.`,
     author: {
       author: [
         {
@@ -14,7 +14,7 @@ module.exports = {
       ],
     },
 
-    description: `A blog by and for the Average Malaysian.`,
+    description: `the a.m. stands for “the average malaysian”. Here you will find stories of people, lessons learnt, and words of encouragement. Join our mailing list to receive new stories right in your mailbox.`,
     siteUrl: `https://theaveragemalaysian.com/`,
     social: {
       youtube: `UC6cpBoxdvVpMNz2u_NMHMJw`,
@@ -122,7 +122,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `The Average Malaysian`,
-        short_name: `The 'A' Malaysian`,
+        short_name: `the a.m.`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
