@@ -43,7 +43,3 @@ We compromise when we know we can live with the consequences of that compromise.
 Whenever you’re at crossroads about to compromise or not, take a moment to think of the consequences. Is that something you can live with? If yes, by all means, go ahead.
 
 I think when we begin to embrace compromise (instead of thinking that it’s taboo), we are able to think about the consequences of the compromise. I think that empowers us to make better decisions. In fact, I think it will make us more live more intentionally.
-
-*• • •*
-
-*Creative Lead by day, writer by night, husband and dad throughout. I write about things that interest me and lessons I’ve learnt. My views are my own. Check out [other things](https://medium.com/@benjamin25116) I’ve written.*
