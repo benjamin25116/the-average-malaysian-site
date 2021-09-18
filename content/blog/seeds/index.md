@@ -7,5 +7,7 @@ thumbnail: pexels-engin-akyurt-1438404.jpg
 author: Huey Lin
 ---
 A new day fills with
+
 Spoken words, unspoken thoughts
+
 Keep those that grow you
