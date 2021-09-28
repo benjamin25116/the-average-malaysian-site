@@ -10,7 +10,7 @@ const Layout = ({ location, title, children }) => {
       <header>
         <Menu location={location} title={title} />
       </header>
-      <main>{children}</main>
+      <main style={{paddingTop: "60px"}}>{children}</main>
       <footer>
         © {new Date().getFullYear()}, Built with
         {` `}
