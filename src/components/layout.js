@@ -1,16 +1,16 @@
 import * as React from "react"
 import Styles from "../components/GlobalStyle"
 
-import Menu from "./menu/Menu"
+import Menu from "./Menu"
 
-const Layout = ({ location, title, children }) => {
+const Layout = ({  title, children }) => {
   return (
     <div>
       <Styles />
       <header>
-        <Menu location={location} title={title} />
+        <Menu title={title} />
       </header>
-      <main style={{paddingTop: "60px"}}>{children}</main>
+      <main style={{paddingTop: "60px", width: "100%", overflowX: "hidden"}}>{children}</main>
       <footer>
         © {new Date().getFullYear()}, Built with
         {` `}

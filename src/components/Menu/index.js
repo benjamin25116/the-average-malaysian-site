@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import Variables from "../StyleConstants"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 
 const NavBarWrapper = styled.div`
   background-color: white;
@@ -20,7 +20,6 @@ const NavBar = styled.nav`
   grid-template-rows: 60px auto;
   max-width: 1280px;
   margin: 0 auto;
-  
 
   @media (min-width: 768px) {
     padding: 0 2rem;
@@ -38,22 +37,14 @@ const MenuListWrapper = styled(motion.div)`
   margin: 0;
   justify-self: end;
   align-self: center;
-
-  @media (min-width: 768px) {
-    grid-row: 1 / 2;
-    grid-column: 6 / 7;
-    display: block;
-  }
 `
 const MenuList = styled.ul`
   margin: 0;
   li {
     padding-left: 2rem;
   }
-  @media (min-width: 768px) {
-    display: flex;
-    flex-direction: row;
-  }
+  display: flex;
+  flex-direction: column;
 `
 const HomeLink = styled.h1`
   grid-row: 1 / 2;
@@ -67,11 +58,7 @@ const MenuButton = styled.span`
   grid-row: 1 / 2;
   align-self: center;
   justify-self: end;
-
-  /* border: 1px solid blue; */
-  @media (min-width: 768px) {
-    display: none;
-  }
+  font-size: 1.5rem;
 `
 const MenuItem = styled.li`
   font-family: ${Variables.font.sansSerif};
@@ -81,8 +68,9 @@ const MenuItem = styled.li`
   /* border: 1px solid black; */
 `
 
-export default function Menu({ location, title }) {
+export default function Menu({ title }) {
   const [isOpen, setIsOpen] = useState(false)
+
   function handleClick() {
     setIsOpen(!isOpen)
   }
@@ -96,25 +84,25 @@ export default function Menu({ location, title }) {
         <MenuButton onClick={handleClick}>
           {isOpen ? <span>&#10539;</span> : <span>&#9776;</span>}
         </MenuButton>
-        <AnimatePresence>
-          {isOpen && (
-            <MenuListWrapper
-              initial={{ opacity: 0, x: 50, height: 0 }}
-              animate={{ opacity: 1, x: 0, height: 90 }}
-              transition={{type: "tween", duration: 0.25}}
-              exit={{ opacity: 0, x: 50, height: 0 }}
-            >
-              <MenuList>
-                <MenuItem>
-                  <Link to="/">writings</Link>
-                </MenuItem>
-                <MenuItem>
-                  <Link to="/">shop</Link>
-                </MenuItem>
-              </MenuList>
-            </MenuListWrapper>
-          )}
-        </AnimatePresence>
+
+        <MenuListWrapper
+          initial={{ opacity: 0, x: 50, height: 0 }}
+          animate={{
+            opacity: isOpen ? 1 : 0,
+            x: isOpen ? 0 : 50,
+            height: isOpen ? 90 : 0,
+          }}
+          transition={{ type: "tween", duration: 0.25 }}
+        >
+          <MenuList>
+            <MenuItem>
+              <Link to="/writings">writings</Link>
+            </MenuItem>
+            <MenuItem>
+              <Link to="/">shop</Link>
+            </MenuItem>
+          </MenuList>
+        </MenuListWrapper>
       </NavBar>
     </NavBarWrapper>
   )
