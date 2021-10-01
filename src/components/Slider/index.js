@@ -22,7 +22,7 @@ const HeroImage = styled(GatsbyImage)`
   z-index: 0;
   width: 100%;
 `
-const Overlay = styled.div`
+const Overlay = styled(motion.div)`
   grid-column: 1 / 2;
   grid-row: 1 / 2;
   z-index: 1;
@@ -111,7 +111,13 @@ const Slider = () => {
         transition={{ type: "tween", duration: 0.5 }}
       >
         <HeroImage image={getImage(post.frontmatter.thumbnail)} />
-        <Overlay>
+        <Overlay
+        key={post.fields.slug}
+        initial={{ y: -50 }}
+        animate={{ y: 0 }}
+        exit={{ y: 50 }}
+        transition={{ type: "tween", duration: 0.5 }}
+        >
           <PrevPost onClick={handleClick}>PREV</PrevPost>
           <Info>
             <Heading>{post.frontmatter.title}</Heading>
@@ -125,23 +131,18 @@ const Slider = () => {
     )
   })
 
-  const [prev, setPrev] = useState(cards.length - 1)
-  const [next, setNext] = useState(1)
   const [current, setCurrent] = useState(0)
 
   function handleClick(e) {
     if (e.target.innerText === "NEXT") {
-      setPrev(current)
-      setCurrent(next)
-      setNext((next + 1) % cards.length)
+      setCurrent((current + 1) % cards.length)
+      
     }
     if (e.target.innerText === "PREV") {
-      setNext(current)
-      setCurrent(prev)
-      setPrev(Math.abs(prev - 1) % cards.length)
+      setCurrent(Math.abs(current - 1) % cards.length)
     }
   }
-  return <AnimatePresence>{cards[current]}</AnimatePresence>
+  return <AnimatePresence exitBeforeEnter>{cards[current]}</AnimatePresence>
 }
 
 export default Slider
