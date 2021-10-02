@@ -59,6 +59,10 @@ const MenuButton = styled.span`
   align-self: center;
   justify-self: end;
   font-size: 1.5rem;
+  cursor: pointer;
+  :hover {
+    color: black;
+  }
 `
 const MenuItem = styled.li`
   font-family: ${Variables.font.sansSerif};
@@ -68,12 +72,19 @@ const MenuItem = styled.li`
   /* border: 1px solid black; */
 `
 
+const menuData = [
+  { label: "writings", destination: "/writings" },
+  // { label: "shop", destination: "/shop" },
+]
+
 export default function Menu({ title }) {
   const [isOpen, setIsOpen] = useState(false)
 
   function handleClick() {
     setIsOpen(!isOpen)
   }
+
+  const menuHeight = 45 * menuData.length
 
   return (
     <NavBarWrapper>
@@ -82,7 +93,7 @@ export default function Menu({ title }) {
           <Link to="/">{title}</Link>
         </HomeLink>
         <MenuButton onClick={handleClick}>
-          {isOpen ? <span>&#10539;</span> : <span>&#9776;</span>}
+          {isOpen ? <>&#10539;</> : <>&#9776;</>}
         </MenuButton>
 
         <MenuListWrapper
@@ -90,17 +101,16 @@ export default function Menu({ title }) {
           animate={{
             opacity: isOpen ? 1 : 0,
             x: isOpen ? 0 : 50,
-            height: isOpen ? 90 : 0,
+            height: isOpen ? menuHeight : 0,
           }}
           transition={{ type: "tween", duration: 0.25 }}
         >
           <MenuList>
-            <MenuItem>
-              <Link to="/writings">writings</Link>
-            </MenuItem>
-            <MenuItem>
-              <Link to="/">shop</Link>
-            </MenuItem>
+            {menuData.map((item, index) => (
+              <MenuItem key={index}>
+                <Link to={item.destination}>{item.label}</Link>
+              </MenuItem>
+            ))}
           </MenuList>
         </MenuListWrapper>
       </NavBar>

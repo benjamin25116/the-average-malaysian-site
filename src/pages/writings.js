@@ -1,72 +1,60 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { graphql } from "gatsby"
+import styled from "styled-components"
+import Variables from "../components/StyleConstants"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Card from "../components/Card/"
 
-const BlogIndex = ({ data }) => {
+const Heading = styled.h2`
+  color: ${Variables.color.darkGrey};
+  text-align: center;
+  width: 100%;
+`
+const PostWrapper = styled.ul`
+list-style: none;
+margin: 0;
+padding: 0;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 2rem;
+width: 100%;
+
+`
+
+const Writings = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
 
-  if (posts.length === 0) {
-    return (
-      <Layout title={siteTitle}>
-        <Seo title="All posts" />
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
-      </Layout>
-    )
-  }
-
   return (
-    <Layout title={siteTitle}>
+    <Layout title={siteTitle} location={location}>
       <Seo title="All posts" />
-      <Bio />
-      <ol style={{ listStyle: `none` }}>
+      <Heading>writings</Heading>
+      <PostWrapper>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
-
           return (
             <li key={post.fields.slug}>
-              <Link to={`/writings` + post.fields.slug} itemProp="url">
-                <article
-                  className="post-list-item"
-                  itemScope
-                  itemType="http://schema.org/Article"
-                >
-                  <GatsbyImage image={getImage(post.frontmatter.thumbnail)} />
-                  <header>
-                    <h2>
-                      <span itemProp="headline">{title}</span>
-                    </h2>
-                    <small>{`by ${post.frontmatter.author}`}</small>
-                    <br />
-                    <small>{`${post.frontmatter.date} • ${post.timeToRead}-minute read`}</small>
-                  </header>
-                  <section>
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: post.excerpt,
-                      }}
-                      itemProp="description"
-                    />
-                  </section>
-                </article>
-              </Link>
+              <Card
+                slug={post.fields.slug}
+                thumbnail={post.frontmatter.thumbnail}
+                title={title}
+                author={post.frontmatter.author}
+                date={post.frontmatter.date}
+                timeToRead={post.timeToRead}
+                excerpt={post.excerpt}
+              />
             </li>
           )
         })}
-      </ol>
+      </PostWrapper>
     </Layout>
   )
 }
 
-export default BlogIndex
+export default Writings
 
 export const pageQuery = graphql`
   query {
@@ -87,7 +75,7 @@ export const pageQuery = graphql`
           title
           thumbnail {
             childImageSharp {
-              gatsbyImageData(placeholder: BLURRED)
+              gatsbyImageData(placeholder: TRACED_SVG)
             }
           }
           author

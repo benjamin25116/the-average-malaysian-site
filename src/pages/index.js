@@ -4,16 +4,18 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Slider from "../components/Slider"
+import About from "../components/About"
 
-const Home = ({ data }) => {
+const Home = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   
 
   return (
-    <Layout title={siteTitle}>
+    <Layout title={siteTitle} location={location}>
       <Seo title="Home" />
       {/* <pre>{JSON.stringify(posts, null, 2)}</pre> */}
       <Slider />
+      <About/>
     </Layout>
   )
 }

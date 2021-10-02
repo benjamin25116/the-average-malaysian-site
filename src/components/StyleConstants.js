@@ -1,7 +1,10 @@
 const StyleConstants = {
   color: {
-    lightGrey: "#9d9d9c",
-    darkGrey: "#878787",
+    lightestGrey: "#ededed",
+    lighterGrey: "#DDD",
+    lightGrey: "#888",
+    darkGrey: "#666",
+    darkerGrey: "#444",
   },
   font: {
     sansSerif: "Montserrat, Helvetica, sans-serif",

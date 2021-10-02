@@ -1,22 +1,30 @@
 import * as React from "react"
-import Styles from "../components/GlobalStyle"
+import GlobalStyles from "../components/GlobalStyle"
+import styled from "styled-components"
+import Variables from "./StyleConstants"
 
 import Menu from "./Menu"
+import Footer from "./Footer"
 
-const Layout = ({  title, children }) => {
+const Main = styled.main`
+  padding-top: 60px;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: ${props =>
+    props.dark ? Variables.color.lightestGrey : "white"};
+`
+
+const Layout = ({ title, children, location }) => {
+  const dark = location.pathname === "/writings" && true
   return (
-    <div>
-      <Styles />
+    <>
+      <GlobalStyles />
       <header>
         <Menu title={title} />
       </header>
-      <main style={{paddingTop: "60px", width: "100%", overflowX: "hidden"}}>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
-      </footer>
-    </div>
+      <Main dark={dark}>{children}</Main>
+      <Footer />
+    </>
   )
 }
 

@@ -14,6 +14,7 @@ const Container = styled(motion.article)`
   width: 100%;
   height: calc(100vh - 60px);
   padding: 0 1rem 1rem;
+  overflow-y: hidden;
 `
 const HeroImage = styled(GatsbyImage)`
   grid-column: 1 / 2;
@@ -36,6 +37,17 @@ const Heading = styled.h2`
   color: white;
   font-size: 2rem;
   text-align: center;
+  margin-bottom: 0.5rem;
+  @media(max-width: 567px) {
+    font-size: 1.2rem;
+  }
+`
+const Description = styled.span`
+  color: white;
+  margin-bottom: 0.5rem;
+  @media(max-width: 567px) {
+    font-size: 0.8rem;
+  }
 `
 const StyledLink = styled(Link)`
   border: 1px solid white;
@@ -50,8 +62,9 @@ const Button = styled.button`
   background-color: transparent;
   border: none;
   color: white;
-  padding-bottom: 0.35rem;
-  border-bottom: 1px solid white;
+  padding-top: 0.35rem;
+  border-top: 1px solid white;
+  text-shadow: 0 0 30px black;
 `
 const PrevPost = styled(Button)`
   transform: rotate(90deg);
@@ -60,13 +73,17 @@ const NextPost = styled(Button)`
   transform: rotate(-90deg);
 `
 
-const Info = styled.section`
-  align-self: flex-end;
+const Info = styled(motion.section)`
+  align-self: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  /* border: 1px solid green; */
+  text-shadow: 0 0 30px black;
+
+  @media(max-width: 568px){
+    align-self: flex-end;
+  }
 `
 
 const Slider = () => {
@@ -80,17 +97,16 @@ const Slider = () => {
       allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
         nodes {
           excerpt
-          timeToRead
           fields {
             slug
           }
           frontmatter {
-            date(formatString: "D MMMM, YYYY")
+            date(formatString: "D MMM, YYYY")
             title
             author
             thumbnail {
               childImageSharp {
-                gatsbyImageData(placeholder: BLURRED)
+                gatsbyImageData(placeholder: TRACED_SVG)
               }
             }
           }
@@ -101,7 +117,7 @@ const Slider = () => {
 
   const posts = data.allMarkdownRemark.nodes
 
-  const cards = posts.map(post => {
+  const slides = posts.map(post => {
     return (
       <Container
         key={post.frontmatter.title}
@@ -110,17 +126,18 @@ const Slider = () => {
         exit={{ opacity: 0 }}
         transition={{ type: "tween", duration: 0.5 }}
       >
-        <HeroImage image={getImage(post.frontmatter.thumbnail)} />
-        <Overlay
-        key={post.fields.slug}
-        initial={{ y: -50 }}
-        animate={{ y: 0 }}
-        exit={{ y: 50 }}
-        transition={{ type: "tween", duration: 0.5 }}
-        >
+        <HeroImage image={getImage(post.frontmatter.thumbnail)} alt="" />
+        <Overlay>
           <PrevPost onClick={handleClick}>PREV</PrevPost>
-          <Info>
+          <Info
+            key={post.fields.slug}
+            initial={{ y: -50 }}
+            animate={{ y: 0 }}
+            exit={{ y: 50 }}
+            transition={{ type: "tween", duration: 0.5 }}
+          >
             <Heading>{post.frontmatter.title}</Heading>
+            <Description>{`by ${post.frontmatter.author}`}</Description><Description>{`${post.frontmatter.date}`}</Description>
             <StyledLink to={`/writings` + post.fields.slug}>
               Read this
             </StyledLink>
@@ -135,14 +152,13 @@ const Slider = () => {
 
   function handleClick(e) {
     if (e.target.innerText === "NEXT") {
-      setCurrent((current + 1) % cards.length)
-      
+      setCurrent((current + 1) % slides.length)
     }
     if (e.target.innerText === "PREV") {
-      setCurrent(Math.abs(current - 1) % cards.length)
+      setCurrent(Math.abs(current - 1) % slides.length)
     }
   }
-  return <AnimatePresence exitBeforeEnter>{cards[current]}</AnimatePresence>
+  return <AnimatePresence exitBeforeEnter>{slides[current]}</AnimatePresence>
 }
 
 export default Slider
