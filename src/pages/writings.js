@@ -14,14 +14,15 @@ const Heading = styled.h2`
 `
 const PostWrapper = styled.ul`
 list-style: none;
-margin: 0;
+margin: 0 auto;
 padding: 0;
+padding-bottom: 1.5rem;
 display: flex;
 flex-wrap: wrap;
 justify-content: center;
-gap: 2rem;
+gap: 1.5rem;
 width: 100%;
-
+max-width: 1280px;
 `
 
 const Writings = ({ data, location }) => {

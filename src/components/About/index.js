@@ -7,14 +7,26 @@ const Container = styled.section`
   padding: 1rem;
   margin: 0 auto;
   display: flex;
-  align-items: center;
-  gap: 2rem;
+  align-items: flex-start;
+  flex-direction: column;
+
+  @media (min-width: 568px) {
+    align-items: center;
+    flex-direction: row;
+    gap: 2rem;
+  }
 `
 const Title = styled.h2`
   color: ${Variables.color.lightGrey};
-  text-align: right;
+  text-align: left;
+
+  margin: 0 0 1rem 0;
+  @media (min-width: 568px) {
+    text-align: right;
+  }
 `
 const Body = styled.p`
+  margin: 0 0 1rem 0;
   color: ${Variables.color.lightGrey};
 `
 
@@ -23,7 +35,11 @@ export default function About() {
     <Container>
       <Title>the&nbsp;a.m.</Title>
       <Body>
-        stands for “the average malaysian”. It's a term we've all heard of, but really, <em>there is no such thing</em>. The "average malaysian" is made up of diverse people, each with their unique experience, perspective and culture. Here you will find stories, lessons, and encouragement from one "average malaysian" to another. 
+        stands for “the average malaysian”. It's a term we've all heard of, but
+        really, <em>there is no such thing</em>. The "average malaysian" is made
+        up of diverse people, each with their unique experience, perspective and
+        culture. Here you will find stories, lessons, and encouragement from one
+        "average malaysian" to another.
       </Body>
     </Container>
   )

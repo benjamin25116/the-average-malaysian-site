@@ -4,6 +4,7 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import { motion, AnimatePresence } from "framer-motion"
+import Variable from "../StyleConstants"
 
 const Container = styled(motion.article)`
   box-sizing: border-box;
@@ -38,14 +39,14 @@ const Heading = styled.h2`
   font-size: 2rem;
   text-align: center;
   margin-bottom: 0.5rem;
-  @media(max-width: 567px) {
-    font-size: 1.2rem;
+  @media (max-width: 567px) {
+    font-size: 1.5rem;
   }
 `
 const Description = styled.span`
   color: white;
   margin-bottom: 0.5rem;
-  @media(max-width: 567px) {
+  @media (max-width: 567px) {
     font-size: 0.8rem;
   }
 `
@@ -57,6 +58,11 @@ const StyledLink = styled(Link)`
   padding: 0.5rem 2rem;
   max-width: 8rem;
   text-align: center;
+
+  :hover {
+    color: ${Variable.color.darkGrey};
+    border: 1px solid ${Variable.color.darkGrey};
+  }
 `
 const Button = styled.button`
   background-color: transparent;
@@ -65,6 +71,11 @@ const Button = styled.button`
   padding-top: 0.35rem;
   border-top: 1px solid white;
   text-shadow: 0 0 30px black;
+  cursor: pointer;
+  :hover {
+    color: ${Variable.color.darkGrey};
+    border-top: 1px solid ${Variable.color.darkGrey};
+  }
 `
 const PrevPost = styled(Button)`
   transform: rotate(90deg);
@@ -80,10 +91,6 @@ const Info = styled(motion.section)`
   justify-content: flex-end;
   align-items: center;
   text-shadow: 0 0 30px black;
-
-  @media(max-width: 568px){
-    align-self: flex-end;
-  }
 `
 
 const Slider = () => {
@@ -94,7 +101,10 @@ const Slider = () => {
           title
         }
       }
-      allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      allMarkdownRemark(
+        sort: { fields: [frontmatter___date], order: DESC }
+        limit: 3
+      ) {
         nodes {
           excerpt
           fields {
@@ -114,6 +124,22 @@ const Slider = () => {
       }
     }
   `)
+
+  const [order, setOrder] = useState({ prev: 2, current: 0, next: 1 })
+
+  function handleClick(e) {
+    e.target.innerText === "NEXT"
+      ? setOrder({
+          prev: order.current,
+          current: order.next,
+          next: order.prev,
+        })
+      : setOrder({
+          prev: order.next,
+          current: order.prev,
+          next: order.current,
+        })
+  }
 
   const posts = data.allMarkdownRemark.nodes
 
@@ -137,7 +163,8 @@ const Slider = () => {
             transition={{ type: "tween", duration: 0.5 }}
           >
             <Heading>{post.frontmatter.title}</Heading>
-            <Description>{`by ${post.frontmatter.author}`}</Description><Description>{`${post.frontmatter.date}`}</Description>
+            <Description>{`by ${post.frontmatter.author}`}</Description>
+            <Description>{`${post.frontmatter.date}`}</Description>
             <StyledLink to={`/writings` + post.fields.slug}>
               Read this
             </StyledLink>
@@ -148,17 +175,9 @@ const Slider = () => {
     )
   })
 
-  const [current, setCurrent] = useState(0)
-
-  function handleClick(e) {
-    if (e.target.innerText === "NEXT") {
-      setCurrent((current + 1) % slides.length)
-    }
-    if (e.target.innerText === "PREV") {
-      setCurrent(Math.abs(current - 1) % slides.length)
-    }
-  }
-  return <AnimatePresence exitBeforeEnter>{slides[current]}</AnimatePresence>
+  return (
+    <AnimatePresence exitBeforeEnter>{slides[order.current]}</AnimatePresence>
+  )
 }
 
 export default Slider

@@ -7,7 +7,7 @@ import Menu from "./Menu"
 import Footer from "./Footer"
 
 const Main = styled.main`
-  padding-top: 60px;
+  padding-top: calc(60px + 1rem);
   width: 100%;
   overflow-x: hidden;
   background-color: ${props =>
