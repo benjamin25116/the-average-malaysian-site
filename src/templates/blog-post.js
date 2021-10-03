@@ -17,6 +17,7 @@ const BlogPostTemplate = ({ data, location }) => {
         description={post.frontmatter.description || post.excerpt}
         url={`https://www.theaveragemalaysian.com/writings${post.fields.slug}`}
         image={post.frontmatter.thumbnail.absolutePath}
+        type="article"
       />
       <article
         className="blog-post"
