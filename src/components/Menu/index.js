@@ -4,7 +4,7 @@ import styled from "styled-components"
 import Variables from "../StyleConstants"
 import { motion } from "framer-motion"
 
-const NavBarWrapper = styled.div`
+const Background = styled(motion.div)`
   background-color: white;
   box-shadow: 0 -2px 5px grey;
   position: fixed;
@@ -46,12 +46,14 @@ const MenuList = styled.ul`
   display: flex;
   flex-direction: column;
 `
-const HomeLink = styled.h1`
+const HomeLink = styled(Link)`
   grid-row: 1 / 2;
   grid-column: 1 / 5;
-  margin: 0;
-  align-self: center;
-  justify-self: start;
+  place-self: center start;
+  h1 {
+    padding: 0;
+    margin: 0;
+  }
 `
 const MenuButton = styled.span`
   grid-column: 6 / 7;
@@ -76,7 +78,6 @@ const MenuItem = styled.li`
 const menuData = [
   { label: "writings", destination: "/writings" },
   // { label: "shop", destination: "/shop" },
-  
 ]
 
 export default function Menu({ title }) {
@@ -86,13 +87,20 @@ export default function Menu({ title }) {
     setIsOpen(!isOpen)
   }
 
-  const menuHeight = 47 * menuData.length
+  const menuHeight = 60 * menuData.length
 
   return (
-    <NavBarWrapper>
+    <Background
+      initial={{ y: -60, opacity: 0 }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{ type: "tween", duration: 0.5 }}
+    >
       <NavBar>
-        <HomeLink>
-          <Link to="/">{title}</Link>
+        <HomeLink to="/">
+          <h1>{title}</h1>
         </HomeLink>
         <MenuButton onClick={handleClick}>
           {isOpen ? <>&#10539;</> : <>&#9776;</>}
@@ -116,6 +124,6 @@ export default function Menu({ title }) {
           </MenuList>
         </MenuListWrapper>
       </NavBar>
-    </NavBarWrapper>
+    </Background>
   )
 }

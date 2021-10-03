@@ -157,9 +157,9 @@ const Slider = () => {
           <PrevPost onClick={handleClick}>PREV</PrevPost>
           <Info
             key={post.fields.slug}
-            initial={{ y: -50 }}
-            animate={{ y: 0 }}
-            exit={{ y: 50 }}
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0,opacity: 1 }}
+            exit={{ y: 50, opacity: 0 }}
             transition={{ type: "tween", duration: 0.5 }}
           >
             <Heading>{post.frontmatter.title}</Heading>

@@ -6,7 +6,6 @@ import Card from "./Card"
 const CardList = styled.ul`
   list-style: none;
   margin: 0 auto;
-  padding: 0;
   padding-bottom: 1.5rem;
   display: flex;
   flex-wrap: wrap;
@@ -65,6 +64,5 @@ export default function CardIndex() {
         )
       })}
     </CardList>
-    // <pre>{JSON.stringify(posts, null, 2)}</pre>
   )
 }

@@ -15,7 +15,7 @@ module.exports = {
     },
 
     description: `the a.m. stands for “the average malaysian”. Here you will find stories of people, lessons learnt, and words of encouragement. Join our mailing list to receive new stories right in your mailbox.`,
-    siteUrl: `https://theaveragemalaysian.com/`,
+    siteUrl: `https://www.theaveragemalaysian.com/`,
     social: {
       youtube: `UC6cpBoxdvVpMNz2u_NMHMJw`,
     },
@@ -127,7 +127,8 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#696969`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        // This path is relative to the root of the site.
+        icon: `src/images/gatsby-icon.png`, 
       },
     },
     `gatsby-plugin-react-helmet`,
