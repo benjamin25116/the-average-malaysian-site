@@ -15,6 +15,8 @@ const BlogPostTemplate = ({ data, location }) => {
       <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        url={`https://www.theaveragemalaysian.com/writings${post.fields.slug}`}
+        image={post.frontmatter.thumbnail.absolutePath}
       />
       <article
         className="blog-post"
@@ -83,13 +85,18 @@ export const pageQuery = graphql`
     }
     markdownRemark(id: { eq: $id }) {
       id
-      excerpt(pruneLength: 160)
+      excerpt(pruneLength: 200)
       html
+      fields {
+        slug
+      }
       frontmatter {
         title
         author
         date(formatString: "D MMMM, YYYY")
-        description
+        thumbnail {
+          absolutePath
+        }
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {

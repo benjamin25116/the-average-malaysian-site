@@ -15,13 +15,15 @@ const Heading = styled.h2`
 
 const Writings = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  
 
   return (
     <Layout title={siteTitle} location={location}>
-      <Seo title="All posts" />
+      <Seo
+        title="All posts | The Average Malaysian"
+        url={`https://www.theaveragemalaysian.com/writings`}
+      />
       <Heading>all writings</Heading>
-     <Posts/>
+      <Posts />
     </Layout>
   )
 }
