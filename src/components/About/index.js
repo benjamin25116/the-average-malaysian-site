@@ -13,6 +13,7 @@ const Container = styled.section`
   @media (min-width: 568px) {
     align-items: center;
     flex-direction: row;
+    padding: 2rem;
     gap: 2rem;
   }
 `
@@ -36,8 +37,7 @@ export default function About() {
       <Title>the&nbsp;a.m.</Title>
       <Body>
         stands for “the average malaysian”. It's a term we've all heard of, but
-        really, <em>there is no such thing</em>. The "average malaysian" is made
-        up of diverse people, each with their unique experience, perspective and
+        really, <em>no one is average</em>. The "average malaysian" comprises of diverse people, each with their unique experience, perspective and
         culture. Here you will find stories, lessons, and encouragement from one
         "average malaysian" to another.
       </Body>

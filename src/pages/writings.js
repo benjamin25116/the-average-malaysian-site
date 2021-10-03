@@ -5,52 +5,23 @@ import Variables from "../components/StyleConstants"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Card from "../components/Card/"
+import Posts from "../components/Posts/"
 
 const Heading = styled.h2`
   color: ${Variables.color.darkGrey};
   text-align: center;
   width: 100%;
 `
-const PostWrapper = styled.ul`
-list-style: none;
-margin: 0 auto;
-padding: 0;
-padding-bottom: 1.5rem;
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 1.5rem;
-width: 100%;
-max-width: 1280px;
-`
 
 const Writings = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
+  
 
   return (
     <Layout title={siteTitle} location={location}>
       <Seo title="All posts" />
-      <Heading>writings</Heading>
-      <PostWrapper>
-        {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
-          return (
-            <li key={post.fields.slug}>
-              <Card
-                slug={post.fields.slug}
-                thumbnail={post.frontmatter.thumbnail}
-                title={title}
-                author={post.frontmatter.author}
-                date={post.frontmatter.date}
-                timeToRead={post.timeToRead}
-                excerpt={post.excerpt}
-              />
-            </li>
-          )
-        })}
-      </PostWrapper>
+      <Heading>all writings</Heading>
+     <Posts/>
     </Layout>
   )
 }
@@ -62,25 +33,6 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      nodes {
-        excerpt
-        timeToRead
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "D MMMM, YYYY")
-          title
-          thumbnail {
-            childImageSharp {
-              gatsbyImageData(placeholder: TRACED_SVG)
-            }
-          }
-          author
-        }
       }
     }
   }

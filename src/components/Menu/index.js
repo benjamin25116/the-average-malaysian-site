@@ -17,7 +17,7 @@ const NavBar = styled.nav`
   display: grid;
   padding: 0 1rem;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 60px auto;
+  grid-template-rows: ${Variables.menu.height} auto;
   max-width: 1280px;
   margin: 0 auto;
 
@@ -58,7 +58,7 @@ const MenuButton = styled.span`
   grid-row: 1 / 2;
   align-self: center;
   justify-self: end;
-  font-size: 1.5rem;
+  font-size: 2rem;
   cursor: pointer;
   :hover {
     color: black;
@@ -69,12 +69,14 @@ const MenuItem = styled.li`
   list-style: none;
   text-align: center;
   padding: 0.65rem 0;
+  font-size: 1.3rem;
   /* border: 1px solid black; */
 `
 
 const menuData = [
   { label: "writings", destination: "/writings" },
   // { label: "shop", destination: "/shop" },
+  
 ]
 
 export default function Menu({ title }) {
@@ -84,7 +86,7 @@ export default function Menu({ title }) {
     setIsOpen(!isOpen)
   }
 
-  const menuHeight = 45 * menuData.length
+  const menuHeight = 47 * menuData.length
 
   return (
     <NavBarWrapper>
