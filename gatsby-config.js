@@ -67,6 +67,9 @@ module.exports = {
     //   },
     // },
     {
+      resolve: `gatsby-plugin-styled-components`,
+    },
+    {
       resolve: `gatsby-plugin-feed`,
       options: {
         query: `
@@ -128,7 +131,7 @@ module.exports = {
         theme_color: `#696969`,
         display: `minimal-ui`,
         // This path is relative to the root of the site.
-        icon: `src/images/gatsby-icon.png`, 
+        icon: `src/images/gatsby-icon.png`,
       },
     },
     `gatsby-plugin-react-helmet`,
