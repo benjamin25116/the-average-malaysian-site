@@ -12,8 +12,7 @@ const Home = ({ data, location }) => {
 
   return (
     <Layout title={siteTitle} location={location}>
-      <Seo title="Home" />
-      {/* <pre>{JSON.stringify(posts, null, 2)}</pre> */}
+      <Seo title="The Average Malaysian" />
       <Slider />
       <About/>
     </Layout>

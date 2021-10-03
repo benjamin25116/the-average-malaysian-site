@@ -14,7 +14,7 @@ module.exports = {
       ],
     },
 
-    description: `the a.m. stands for “the average malaysian”. Here you will find stories of people, lessons learnt, and words of encouragement. Join our mailing list to receive new stories right in your mailbox.`,
+    description: `The "average malaysian" comprises of diverse people, each with their unique experience, perspective and culture. Here you will find stories, lessons, and encouragement from one "average malaysian" to another.`,
     siteUrl: `https://www.theaveragemalaysian.com/`,
     social: {
       youtube: `UC6cpBoxdvVpMNz2u_NMHMJw`,
@@ -43,7 +43,8 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 630,
+              maxWidth: 1280,
+              tracedSVG: true,
             },
           },
           {

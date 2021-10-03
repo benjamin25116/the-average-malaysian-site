@@ -55,6 +55,10 @@ const Seo = ({ description, lang, meta, title }) => {
           content: `website`,
         },
         {
+          property: `og:url`,
+          content: `https://www.theaveragemalaysian.com/`,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
