@@ -30,7 +30,6 @@ const Seo = ({ description, lang, meta, title, url, type, image }) => {
   const metaDescription = description || site.siteMetadata.description
   const metaURL = url || `https://www.theaveragemalaysian.com/`
   const metaType = type || `website`
-  const metaImage = image
   const defaultTitle = site.siteMetadata?.title
 
   return (
@@ -60,10 +59,6 @@ const Seo = ({ description, lang, meta, title, url, type, image }) => {
         {
           property: `og:url`,
           content: metaURL,
-        },
-        {
-          property: `og:image`,
-          content: metaImage,
         },
         {
           name: `twitter:card`,

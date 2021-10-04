@@ -25,6 +25,7 @@ export default function CardIndex() {
         nodes {
           excerpt
           timeToRead
+          id
           fields {
             slug
           }
@@ -50,7 +51,7 @@ export default function CardIndex() {
       {posts.map(post => {
         const title = post.frontmatter.title || post.fields.slug
         return (
-          <li key={post.fields.slug}>
+          <li key={post.id}>
             <Card
               slug={post.fields.slug}
               thumbnail={post.frontmatter.thumbnail}

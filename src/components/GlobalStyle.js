@@ -4,15 +4,44 @@ import Normalise from "./Normalise"
 import Variables from "../components/StyleConstants"
 
 const Style = createGlobalStyle`
-main {
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
 
+
+main {
   font-family: ${Variables.font.sansSerif};
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: ${Variables.font.serif};
+  color: ${Variables.color.darkerGrey};
+}
+
+h1 {
+  line-height: 2.5rem;
+  margin-bottom: 0.8rem;
+}
+
+p {
+  line-height: 1.8rem;
+  font-size: 1.1rem;
+}
+
+blockquote {
+  padding: 1rem 0;
+  p{
+    font-family: ${Variables.font.sanSerif};
+    font-size: 1.8rem;
+    font-style: italic;
+    line-height: 2.5rem;
+    color: ${Variables.color.lightGrey};
+  }
+  strong {
+    font-size: 1.2rem;
+    color: ${Variables.color.darkGrey};
+  }
+}
+
+.bio-avatar {
+  width: 100px;
 }
 `
 

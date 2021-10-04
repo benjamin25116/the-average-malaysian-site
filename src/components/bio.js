@@ -8,6 +8,21 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import styled from "styled-components"
+import Variables from "../components/StyleConstants"
+
+const Container = styled.div`
+max-width: ${Variables.blog.maxWidth};
+margin: 0 auto 2rem;
+display: grid;
+grid-template-columns: 1fr 3fr;
+grid-template-rows: auto;
+place-items: center start;
+
+p {
+  padding-left: 1rem;
+}
+`
 
 const Bio = ({ benjamin, huey_lin }) => {
   const data = useStaticQuery(graphql`
@@ -39,20 +54,20 @@ const Bio = ({ benjamin, huey_lin }) => {
 
   if (benjamin) {
     return (
-      <div className="bio">
+      <Container className="bio">
         <StaticImage
           className="bio-avatar"
           layout="fixed"
           formats={["auto", "webp", "avif"]}
           src="../images/ben.jpg"
-          width={50}
-          height={50}
+          width={100}
+          height={100}
           quality={95}
           alt="Profile picture"
         />
         {ben.name && (
           <p>
-            Written by <strong>{ben.name}</strong> {ben.summary || null}
+            Written by <strong>{ben.name}</strong>. {ben.summary || null}
             {` `}
             <a
               href={`https://www.youtube.com/channel/${social?.youtube || ``}`}
@@ -61,19 +76,19 @@ const Bio = ({ benjamin, huey_lin }) => {
             </a>
           </p>
         )}
-      </div>
+      </Container>
     )
   }
   if (huey_lin) {
     return (
-      <div className="bio">
+      <Container className="bio">
         <StaticImage
           className="bio-avatar"
           layout="fixed"
           formats={["auto", "webp", "avif"]}
           src="../images/huey-lin.jpg"
-          width={50}
-          height={50}
+          width={100}
+          height={100}
           quality={95}
           alt="Profile picture"
         />
@@ -88,18 +103,18 @@ const Bio = ({ benjamin, huey_lin }) => {
             </a>
           </p>
         )}
-      </div>
+      </Container>
     )
   }
   return (
-    <div className="bio">
+    <Container className="bio">
       <StaticImage
         className="bio-avatar"
         layout="fixed"
         formats={["auto", "webp", "avif"]}
         src="../images/ben-huey-lin.jpg"
-        width={50}
-        height={50}
+        width={100}
+        height={100}
         quality={95}
         alt="Profile picture"
       />
@@ -112,7 +127,7 @@ const Bio = ({ benjamin, huey_lin }) => {
           Check out their YouTube channel.
         </a>
       </p>
-    </div>
+    </Container>
   )
 }
 

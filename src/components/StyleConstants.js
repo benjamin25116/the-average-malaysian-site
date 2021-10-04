@@ -14,6 +14,9 @@ const StyleConstants = {
   },
   menu: {
     height: "60px",
+  },
+  blog: {
+    maxWidth: "667px"
   }
 }
 

@@ -5,7 +5,7 @@ module.exports = {
       author: [
         {
           name: `Benjamin`,
-          summary: `who lives and works in Sentul, Kuala Lumpur serving urban poor children. Married to Huey Lin.`,
+          summary: `Husband, father, child of God. Married to Huey Lin.`,
         },
         {
           name: `Huey Lin`,
