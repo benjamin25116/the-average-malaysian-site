@@ -23,14 +23,14 @@ export default function CardIndex() {
         sort: { order: DESC, fields: [frontmatter___date] }
       ) {
         nodes {
-          excerpt
+          excerpt(pruneLength: 80)
           timeToRead
           id
           fields {
             slug
           }
           frontmatter {
-            date(formatString: "D MMMM, YYYY")
+            date(formatString: "D MMM, YYYY")
             title
             thumbnail {
               childImageSharp {
@@ -38,6 +38,7 @@ export default function CardIndex() {
               }
             }
             author
+            category
           }
         }
       }
@@ -60,6 +61,7 @@ export default function CardIndex() {
               date={post.frontmatter.date}
               timeToRead={post.timeToRead}
               excerpt={post.excerpt}
+              category={post.frontmatter.category}
             />
           </li>
         )

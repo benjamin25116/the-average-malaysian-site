@@ -12,30 +12,30 @@ const StyledArticle = styled.article`
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr 1fr;
-
-  @media (max-width: 568px) {
-    height: calc(100vh - ${Variables.menu.height});
-  }
+  box-shadow: 0 0 3px ${Variables.color.lighterGrey};
 `
 
 const StyledHeader = styled.header`
   h3 {
     text-transform: uppercase;
     margin: 0;
-    margin-bottom: 1rem;
-    padding: 0.8rem 0;
-    border-bottom: 2px solid ${Variables.color.lighterBrown};
+    margin-bottom: 0.5rem;
+    padding: 0;
+    padding-bottom:0.5rem;
+    border-bottom: 3px solid ${Variables.color.lighterBrown};
     line-height: 1.75rem;
     color: ${Variables.color.darkerGrey};
   }
   span {
+    display: inline-block;
     font-size: 0.7rem;
     text-transform: uppercase;
+    margin-bottom: 0.8rem;
   }
 `
 const StyledSection = styled.section`
-  min-height: 90px;
   p {
+    margin: 0;
     line-height: 1.15rem;
     font-size: 0.9rem;
     color: ${Variables.color.darkerGrey};
@@ -46,28 +46,19 @@ const StyledLink = styled(Link)`
   color: ${Variables.color.darkGrey};
 `
 const CardImage = styled(GatsbyImage)`
-  grid-row: 1 / 2;
-  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+  grid-column: 1 / 2;
   z-index: 0;
-  @media (min-width: 568px) {
-    grid-row: 1 / 3;
-    grid-column: 1 / 2;
-  }
 `
 const CardInfo = styled.div`
   padding: 1.5rem;
-  grid-row: 2 / 3;
-  grid-column: 1 / 3;
-
-  @media (min-width: 568px) {
-    grid-row: 1 / 3;
-    grid-column: 2 / 3;
-  }
+  grid-row: 1 / 3;
+  grid-column: 2 / 3;
 
   :hover {
     background-color: ${Variables.color.lighterBrown};
     h3 {
-      border-bottom: 2px solid white;
+      border-bottom: 3px solid white;
     }
   }
 `
@@ -80,6 +71,7 @@ export default function Card({
   date,
   timeToRead,
   excerpt,
+  category
 }) {
   return (
     <StyledLink to={`/writings` + slug} itemProp="url">
@@ -93,18 +85,16 @@ export default function Card({
         <CardInfo>
           <StyledHeader>
             <h3 itemProp="headline">{title}</h3>
-            <span>{`by ${author}`}</span>
-            <br />
-            <span>{`${date} • ${timeToRead}-minute read`}</span>
+            <span>{`${author} • ${date} • ${timeToRead}-minute read`}</span>
           </StyledHeader>
-          <StyledSection>
+          {category === "writing" && <StyledSection>
             <p
               dangerouslySetInnerHTML={{
                 __html: excerpt,
               }}
               itemProp="description"
             />
-          </StyledSection>
+          </StyledSection>}
         </CardInfo>
       </StyledArticle>
     </StyledLink>
