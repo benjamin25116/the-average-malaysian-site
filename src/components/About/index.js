@@ -28,6 +28,8 @@ const Title = styled.h2`
 `
 const Body = styled.p`
   margin: 0 0 1rem 0;
+  font-size: 1rem;
+  line-height: 1.2rem;
   color: ${Variables.color.lightGrey};
 `
 

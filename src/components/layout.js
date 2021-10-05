@@ -9,6 +9,7 @@ import Footer from "./Footer"
 const Main = styled.main`
   padding-top: calc(${Variables.menu.height});
   width: 100%;
+  min-height: calc(100vh - ${Variables.footer.minHeight});
   overflow-x: hidden;
   background-color: ${props =>
     props.dark ? Variables.color.lightestGrey : "white"};
@@ -19,9 +20,7 @@ const Layout = ({ title, children, location }) => {
   return (
     <div>
       <GlobalStyles />
-      <header>
-        <Menu title={title} />
-      </header>
+      <Menu title={title} />
       <Main dark={dark}>{children}</Main>
       <Footer />
     </div>

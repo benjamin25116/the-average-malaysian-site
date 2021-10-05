@@ -17,6 +17,9 @@ const StyleConstants = {
   },
   blog: {
     maxWidth: "667px"
+  },
+  footer: {
+    minHeight: "100px"
   }
 }
 

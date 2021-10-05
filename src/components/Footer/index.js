@@ -11,10 +11,14 @@ const Container = styled.div`
   padding: 2rem;
   font-size: 0.9rem;
   text-align: center;
+  min-height: ${Variables.footer.minHeight};
   p,
   a {
     color: ${Variables.color.lightGrey};
     font-family: ${Variables.font.sansSerif};
+    font-size: 0.8rem;
+    line-height: 1rem;
+    margin: 0;
   }
 `
 

@@ -21,7 +21,7 @@ const StyledHeader = styled.header`
     margin: 0;
     margin-bottom: 0.5rem;
     padding: 0;
-    padding-bottom:0.5rem;
+    padding-bottom: 0.5rem;
     border-bottom: 3px solid ${Variables.color.lighterBrown};
     line-height: 1.75rem;
     color: ${Variables.color.darkerGrey};
@@ -31,6 +31,16 @@ const StyledHeader = styled.header`
     font-size: 0.7rem;
     text-transform: uppercase;
     margin-bottom: 0.8rem;
+    padding-right: 0.8rem;
+  }
+  @media (max-width: 414px) {
+    h3 {
+      font-size: 0.8rem;
+      line-height: 1rem;
+    }
+    span {
+      margin: 0;
+    }
   }
 `
 const StyledSection = styled.section`
@@ -39,6 +49,10 @@ const StyledSection = styled.section`
     line-height: 1.15rem;
     font-size: 0.9rem;
     color: ${Variables.color.darkerGrey};
+  }
+
+  @media (max-width: 414px) {
+    display: none;
   }
 `
 const StyledLink = styled(Link)`
@@ -61,6 +75,10 @@ const CardInfo = styled.div`
       border-bottom: 3px solid white;
     }
   }
+
+  @media (max-width: 414px) {
+    padding: 1rem;
+  }
 `
 
 export default function Card({
@@ -71,7 +89,7 @@ export default function Card({
   date,
   timeToRead,
   excerpt,
-  category
+  category,
 }) {
   return (
     <StyledLink to={`/writings` + slug} itemProp="url">
@@ -85,16 +103,19 @@ export default function Card({
         <CardInfo>
           <StyledHeader>
             <h3 itemProp="headline">{title}</h3>
-            <span>{`${author} • ${date} • ${timeToRead}-minute read`}</span>
+            <span>{`${author} • ${date}`}</span>
+            <span>{`${timeToRead}-minute read • ${category}`}</span>
           </StyledHeader>
-          {category === "writing" && <StyledSection>
-            <p
-              dangerouslySetInnerHTML={{
-                __html: excerpt,
-              }}
-              itemProp="description"
-            />
-          </StyledSection>}
+          {category === "writing" && (
+            <StyledSection>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: excerpt,
+                }}
+                itemProp="description"
+              />
+            </StyledSection>
+          )}
         </CardInfo>
       </StyledArticle>
     </StyledLink>
