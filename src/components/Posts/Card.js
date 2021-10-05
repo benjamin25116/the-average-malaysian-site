@@ -13,6 +13,13 @@ const StyledArticle = styled.article`
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr 1fr;
   box-shadow: 0 0 3px ${Variables.color.lighterGrey};
+
+  :hover {
+    background-color: ${Variables.color.lighterBrown};
+    h3 {
+      border-bottom: 2px solid white;
+    }
+  }
 `
 
 const StyledHeader = styled.header`
@@ -22,37 +29,39 @@ const StyledHeader = styled.header`
     margin-bottom: 0.5rem;
     padding: 0;
     padding-bottom: 0.5rem;
-    border-bottom: 3px solid ${Variables.color.lighterBrown};
-    line-height: 1.75rem;
+    border-bottom: 2px solid ${Variables.color.lighterBrown};
+    font-size: 0.8rem;
+    line-height: 1rem;
     color: ${Variables.color.darkerGrey};
   }
   span {
     display: inline-block;
     font-size: 0.7rem;
     text-transform: uppercase;
-    margin-bottom: 0.8rem;
+
+    margin: 0;
     padding-right: 0.8rem;
   }
-  @media (max-width: 414px) {
+  @media (min-width: 415px) {
     h3 {
-      font-size: 0.8rem;
-      line-height: 1rem;
+      line-height: 1.75rem;
     }
     span {
-      margin: 0;
+      margin-bottom: 0.8rem;
     }
   }
 `
 const StyledSection = styled.section`
+  display: none;
+  @media (min-width: 415px) {
+    display: block;
+  }
+
   p {
     margin: 0;
     line-height: 1.15rem;
     font-size: 0.9rem;
     color: ${Variables.color.darkerGrey};
-  }
-
-  @media (max-width: 414px) {
-    display: none;
   }
 `
 const StyledLink = styled(Link)`
@@ -65,19 +74,12 @@ const CardImage = styled(GatsbyImage)`
   z-index: 0;
 `
 const CardInfo = styled.div`
-  padding: 1.5rem;
+  padding: 1rem;
   grid-row: 1 / 3;
   grid-column: 2 / 3;
 
-  :hover {
-    background-color: ${Variables.color.lighterBrown};
-    h3 {
-      border-bottom: 3px solid white;
-    }
-  }
-
-  @media (max-width: 414px) {
-    padding: 1rem;
+  @media (min-width: 415px) {
+    padding: 1.5rem;
   }
 `
 

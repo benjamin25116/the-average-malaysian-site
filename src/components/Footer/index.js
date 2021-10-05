@@ -4,6 +4,7 @@ import Variables from "../StyleConstants"
 
 const Background = styled.footer`
   background-color: ${Variables.color.lighterGrey};
+min-height: ${Variables.footer.minHeight};
 `
 const Container = styled.div`
   max-width: 1280px;
@@ -11,7 +12,6 @@ const Container = styled.div`
   padding: 2rem;
   font-size: 0.9rem;
   text-align: center;
-  min-height: ${Variables.footer.minHeight};
   p,
   a {
     color: ${Variables.color.lightGrey};

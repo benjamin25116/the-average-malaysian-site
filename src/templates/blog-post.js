@@ -16,36 +16,32 @@ const Container = styled.div`
   margin: 0 auto;
 `
 const Header = styled.header`
-max-width: ${maxWidth};
-margin: 0 auto;
-a {
-  display: block;    
-  color: ${Variables.color.lightGrey};
-      text-decoration: none;
-      margin-bottom: 1rem;
-      :hover {
-        text-decoration: underline;
-      }
-    }
+  max-width: ${maxWidth};
+  margin: 0 auto;
+  a {
+    display: block;
+    color: ${Variables.color.lightGrey};
+    margin-bottom: 1rem;
+  }
 `
 const Description = styled.span`
-color: ${Variables.color.lightGrey};
-display: block;
-margin-bottom: 1rem;
+  color: ${Variables.color.lightGrey};
+  display: block;
+  margin-bottom: 1rem;
 `
 const Post = styled.section`
-max-width: ${maxWidth};
-margin: 0 auto;
-padding: 2rem 0;
+  max-width: ${maxWidth};
+  margin: 0 auto;
+  padding: 2rem 0;
 
-h2 {
-  margin-top: 3rem;
-  margin-bottom: 0rem;
-}
+  h2 {
+    margin-top: 3rem;
+    margin-bottom: 0rem;
+  }
 `
 const Nav = styled.nav`
-max-width: ${maxWidth};
-margin: 0 auto;
+  max-width: ${maxWidth};
+  margin: 0 auto;
   ul {
     display: flex;
     flex-wrap: wrap;
@@ -55,10 +51,6 @@ margin: 0 auto;
 
     a {
       color: ${Variables.color.lightGrey};
-      text-decoration: none;
-      :hover {
-        text-decoration: underline;
-      }
     }
   }
 `
@@ -84,9 +76,9 @@ const BlogPostTemplate = ({ data, location }) => {
           itemType="http://schema.org/Article"
         >
           <Header>
-          <Link to="/writings">
-          <span>&#10094;</span>Back to all writings
-                </Link>
+            <Link to="/writings">
+              <span>&#10094;</span>Back to all writings
+            </Link>
             <h1 itemProp="headline">{post.frontmatter.title}</h1>
             <Description>{`By ${post.frontmatter.author} • ${post.frontmatter.date} • ${post.timeToRead}-minute read`}</Description>
             <GatsbyImage image={image} alt="" />

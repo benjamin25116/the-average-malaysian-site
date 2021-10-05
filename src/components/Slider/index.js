@@ -52,7 +52,6 @@ const StyledLink = styled(Link)`
   color: white;
   text-decoration: none;
   padding: 0.5rem 2rem;
-  max-width: 8rem;
   text-align: center;
 
   :hover {

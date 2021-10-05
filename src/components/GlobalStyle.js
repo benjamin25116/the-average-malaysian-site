@@ -4,19 +4,6 @@ import Normalise from "./Normalise"
 import Variables from "../components/StyleConstants"
 
 const Style = createGlobalStyle`
-html {
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-}
-
-    *,
-    *::before,
-    *::after {
-        -webkit-box-sizing: inherit;
-           -moz-box-sizing: inherit;
-                box-sizing: inherit;
-    }
 
 main {
   font-family: ${Variables.font.sansSerif};
@@ -54,6 +41,14 @@ blockquote {
 
 .bio-avatar {
   width: 100px;
+}
+
+a {
+  text-decoration: underline;
+  color: inherit;
+  :hover {
+    text-decoration: none;
+  }
 }
 `
 

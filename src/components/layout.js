@@ -9,7 +9,7 @@ import Footer from "./Footer"
 const Main = styled.main`
   padding-top: calc(${Variables.menu.height});
   width: 100%;
-  min-height: calc(100vh - ${Variables.footer.minHeight});
+  min-height: calc(100vh - ${Variables.footer.minHeight} - ${Variables.menu.height});
   overflow-x: hidden;
   background-color: ${props =>
     props.dark ? Variables.color.lightestGrey : "white"};

@@ -6,22 +6,22 @@ import Card from "./Card"
 const CardList = styled.ul`
   list-style: none;
   margin: 0 auto;
-  padding-bottom: 1.5rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem;
   width: 100%;
   max-width: 1280px;
+
+  @media (min-width: 415px) {
+    padding-bottom: 1.5rem;
+    gap: 1.5rem;
+  }
 `
 
 export default function CardIndex() {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(
-        
-        sort: { order: DESC, fields: [frontmatter___date] }
-      ) {
+      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
         nodes {
           excerpt(pruneLength: 80)
           timeToRead
