@@ -30,7 +30,8 @@ const Heading = styled.h1`
 const Description = styled.span`
   color: ${Variables.color.lightGrey};
   display: block;
-  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
   text-align: center;
 `
 const Post = styled.section`
@@ -97,7 +98,7 @@ const BlogPostTemplate = ({ data, location }) => {
             <Heading itemProp="headline">{post.frontmatter.title}</Heading>
             <Description>{`By ${post.frontmatter.author} • ${post.frontmatter.date}`}</Description>
             <Description>{`${post.timeToRead}-minute read`}</Description>
-            <Link style={{textAlign: "center"}} to="/writings">
+            <Link style={{textAlign: "center", marginTop: "1rem"}} to="/writings">
               <PrevArrow>&#10094;</PrevArrow>Back to all writings
             </Link>
             <GatsbyImage image={image} alt="" />

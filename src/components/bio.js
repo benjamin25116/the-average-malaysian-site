@@ -21,6 +21,9 @@ place-items: center start;
 
 p {
   padding-left: 1rem;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  color: ${Variables.color.lightGrey};
 }
 `
 

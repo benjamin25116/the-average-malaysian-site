@@ -15,12 +15,20 @@ module.exports = {
     },
 
     description: `The "average malaysian" comprises of diverse people, each with their unique experience, perspective and culture. Here you will find stories, lessons, and encouragement from one "average malaysian" to another.`,
-    siteUrl: `https://www.theaveragemalaysian.com/`,
+    siteUrl: `https://www.theaveragemalaysian.com`,
     social: {
       youtube: `UC6cpBoxdvVpMNz2u_NMHMJw`,
     },
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://www.theaveragemalaysian.com",
+        sitemap: "https://www.example.com/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
