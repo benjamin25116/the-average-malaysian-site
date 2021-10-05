@@ -34,7 +34,7 @@ export default function CardIndex() {
             title
             thumbnail {
               childImageSharp {
-                gatsbyImageData(placeholder: TRACED_SVG)
+                gatsbyImageData(placeholder: BLURRED)
               }
             }
             author

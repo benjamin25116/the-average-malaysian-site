@@ -61,7 +61,7 @@ const Bio = ({ benjamin, huey_lin }) => {
         <StaticImage
           className="bio-avatar"
           layout="fixed"
-          formats={["auto", "webp", "avif"]}
+          formats={["auto"]}
           src="../images/ben.jpg"
           width={100}
           height={100}

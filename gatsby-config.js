@@ -1,5 +1,3 @@
-
-
 module.exports = {
   siteMetadata: {
     title: `the a.m.`,

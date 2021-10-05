@@ -123,7 +123,7 @@ const Slider = () => {
             author
             thumbnail {
               childImageSharp {
-                gatsbyImageData(placeholder: TRACED_SVG)
+                gatsbyImageData(placeholder: BLURRED)
               }
             }
           }

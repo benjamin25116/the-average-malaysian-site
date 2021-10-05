@@ -174,7 +174,7 @@ export const pageQuery = graphql`
         date(formatString: "D MMMM, YYYY")
         thumbnail {
           childImageSharp {
-            gatsbyImageData(placeholder: TRACED_SVG)
+            gatsbyImageData(placeholder: BLURRED)
           }
         }
       }
