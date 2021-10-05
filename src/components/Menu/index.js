@@ -4,7 +4,7 @@ import styled from "styled-components"
 import Variables from "../StyleConstants"
 import { motion } from "framer-motion"
 
-const Background = styled(motion.div)`
+const Wrapper = styled(motion.header)`
   background-color: white;
   box-shadow: 0 -2px 5px grey;
   position: fixed;
@@ -55,13 +55,33 @@ const HomeLink = styled(Link)`
     margin: 0;
   }
 `
-const MenuButton = styled.span`
+const MenuButton = styled.button`
   grid-column: 6 / 7;
   grid-row: 1 / 2;
-  align-self: center;
   justify-self: end;
-  font-size: 2rem;
+  height: ${Variables.menu.height};
+  width: ${Variables.menu.height};
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: transparent;
   cursor: pointer;
+  .hamburger {
+    font-size: 2rem;
+    line-height: 0;
+  }
+  .cross {
+    font-size: 3rem;
+    line-height: 0;
+  }
+  .hamburger,
+  .cross {
+    text-align: right;
+  }
+
   :hover {
     color: black;
   }
@@ -90,27 +110,24 @@ export default function Menu({ title }) {
   const menuHeight = 60 * menuData.length
 
   return (
-    <Background
-      initial={{ y: -60, opacity: 0 }}
-      animate={{
-        opacity: 1,
-        y: 0,
-      }}
-      transition={{ type: "tween", duration: 0.5 }}
-    >
+    <Wrapper>
       <NavBar>
         <HomeLink to="/">
           <h1>{title}</h1>
         </HomeLink>
         <MenuButton onClick={handleClick}>
-          {isOpen ? <>&#10539;</> : <>&#9776;</>}
+          {isOpen ? (
+            <span className="cross">&#215;</span>
+          ) : (
+            <span className="hamburger">&#9776;</span>
+          )}
         </MenuButton>
 
         <MenuListWrapper
-          initial={{ opacity: 0, x: 50, height: 0 }}
+          initial={{ opacity: 0, x: 200, height: 0 }}
           animate={{
             opacity: isOpen ? 1 : 0,
-            x: isOpen ? 0 : 50,
+            x: isOpen ? 0 : 200,
             height: isOpen ? menuHeight : 0,
           }}
           transition={{ type: "tween", duration: 0.25 }}
@@ -124,6 +141,6 @@ export default function Menu({ title }) {
           </MenuList>
         </MenuListWrapper>
       </NavBar>
-    </Background>
+    </Wrapper>
   )
 }

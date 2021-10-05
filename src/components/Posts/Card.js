@@ -10,7 +10,7 @@ const StyledArticle = styled.article`
   max-width: 600px;
   height: 100%;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 3fr 1fr;
   grid-template-rows: 1fr 1fr;
   box-shadow: 0 0 3px ${Variables.color.lighterGrey};
 
@@ -45,6 +45,7 @@ const StyledHeader = styled.header`
   @media (min-width: 415px) {
     h3 {
       line-height: 1.75rem;
+      font-size: 1.25rem;
     }
     span {
       margin-bottom: 0.8rem;
@@ -70,13 +71,13 @@ const StyledLink = styled(Link)`
 `
 const CardImage = styled(GatsbyImage)`
   grid-row: 1 / 3;
-  grid-column: 1 / 2;
+  grid-column: 2 / 3;
   z-index: 0;
 `
 const CardInfo = styled.div`
   padding: 1rem;
   grid-row: 1 / 3;
-  grid-column: 2 / 3;
+  grid-column: 1 / 2;
 
   @media (min-width: 415px) {
     padding: 1.5rem;

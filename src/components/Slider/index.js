@@ -6,7 +6,7 @@ import styled from "styled-components"
 import { motion, AnimatePresence } from "framer-motion"
 import Variables from "../StyleConstants"
 
-const Container = styled(motion.article)`
+const Wrapper = styled(motion.article)`
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr;
@@ -19,36 +19,39 @@ const Container = styled(motion.article)`
 const HeroImage = styled(GatsbyImage)`
   grid-column: 1 / 2;
   grid-row: 1 / 2;
-  border-radius: 0.15rem;
   z-index: 0;
-  width: 100%;
 `
 const Overlay = styled(motion.div)`
   grid-column: 1 / 2;
   grid-row: 1 / 2;
   z-index: 1;
   width: 100%;
-  padding: 2rem 1rem;
+  padding: 1rem;
   display: grid;
   grid-template-columns: 60px auto 60px;
-  grid-template-rows: auto;
 `
 const Heading = styled.h2`
   color: white;
   font-size: 2rem;
   text-align: center;
   margin-bottom: 0.5rem;
+
+  @media (max-width: 567px) {
+    font-size: 1.5rem;
+  }
 `
 const Description = styled.span`
   color: white;
+  font-weight: bold;
   margin-bottom: 0.5rem;
   @media (max-width: 567px) {
     font-size: 0.8rem;
   }
-`
+  `
 const StyledLink = styled(Link)`
   border: 1px solid white;
   border-radius: 0.15rem;
+  font-weight: bold;
   color: white;
   text-decoration: none;
   padding: 0.5rem 2rem;
@@ -93,6 +96,7 @@ const Info = styled(motion.section)`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 1rem;
   text-shadow: 0 0 30px black;
 `
 
@@ -148,12 +152,12 @@ const Slider = () => {
 
   const slides = posts.map(post => {
     return (
-      <Container
+      <Wrapper
         key={post.frontmatter.title}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ type: "tween", duration: 0.5 }}
+        transition={{ type: "tween", duration: 0.2 }}
       >
         <HeroImage image={getImage(post.frontmatter.thumbnail)} alt="" />
         <Overlay>
@@ -163,7 +167,7 @@ const Slider = () => {
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 50, opacity: 0 }}
-            transition={{ type: "tween", duration: 0.5 }}
+            transition={{ type: "tween", duration: 0.2 }}
           >
             <Heading>{post.frontmatter.title}</Heading>
             <Description>{`by ${post.frontmatter.author}`}</Description>
@@ -174,7 +178,7 @@ const Slider = () => {
           </Info>
           <NextPost onClick={handleClick}>NEXT</NextPost>
         </Overlay>
-      </Container>
+      </Wrapper>
     )
   })
 

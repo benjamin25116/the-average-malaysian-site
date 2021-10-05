@@ -10,7 +10,7 @@ import Variables from "../components/StyleConstants"
 
 const maxWidth = Variables.blog.maxWidth
 
-const Container = styled.div`
+const Wrapper = styled.div`
   padding: 2rem 1rem;
   max-width: ${maxWidth};
   margin: 0 auto;
@@ -24,10 +24,14 @@ const Header = styled.header`
     margin-bottom: 1rem;
   }
 `
+const Heading = styled.h1`
+  text-align: center;
+`
 const Description = styled.span`
   color: ${Variables.color.lightGrey};
   display: block;
   margin-bottom: 1rem;
+  text-align: center;
 `
 const Post = styled.section`
   max-width: ${maxWidth};
@@ -48,11 +52,25 @@ const Nav = styled.nav`
     justify-content: space-between;
     list-style: none;
     padding: 0;
+    li {
+      width: 40%;
+    }
+
+    .nextLink {
+      display: flex;
+      justify-content: flex-end;
+    }
 
     a {
       color: ${Variables.color.lightGrey};
     }
   }
+`
+const PrevArrow = styled.span`
+  padding-right: 0.5rem;
+`
+const NextArrow = styled.span`
+  padding-left: 0.5rem;
 `
 
 const BlogPostTemplate = ({ data, location }) => {
@@ -69,18 +87,19 @@ const BlogPostTemplate = ({ data, location }) => {
         url={`https://www.theaveragemalaysian.com/writings${post.fields.slug}`}
         type="article"
       />
-      <Container>
+      <Wrapper>
         <article
           className="blog-post"
           itemScope
           itemType="http://schema.org/Article"
         >
           <Header>
-            <Link to="/writings">
-              <span>&#10094;</span>Back to all writings
+            <Heading itemProp="headline">{post.frontmatter.title}</Heading>
+            <Description>{`By ${post.frontmatter.author} • ${post.frontmatter.date}`}</Description>
+            <Description>{`${post.timeToRead}-minute read`}</Description>
+            <Link style={{textAlign: "center"}} to="/writings">
+              <PrevArrow>&#10094;</PrevArrow>Back to all writings
             </Link>
-            <h1 itemProp="headline">{post.frontmatter.title}</h1>
-            <Description>{`By ${post.frontmatter.author} • ${post.frontmatter.date} • ${post.timeToRead}-minute read`}</Description>
             <GatsbyImage image={image} alt="" />
           </Header>
           {/* <pre>{JSON.stringify(post.html, null, 2)}</pre> */}
@@ -100,21 +119,29 @@ const BlogPostTemplate = ({ data, location }) => {
           <ul>
             <li>
               {previous && (
-                <Link to={`/writings` + previous.fields.slug} rel="prev">
-                  <span>&#10094;</span> {previous.frontmatter.title}
+                <Link
+                  className="previousLink"
+                  to={`/writings` + previous.fields.slug}
+                  rel="prev"
+                >
+                  <PrevArrow>&#10094;</PrevArrow> {previous.frontmatter.title}
                 </Link>
               )}
             </li>
             <li>
               {next && (
-                <Link to={`/writings` + next.fields.slug} rel="next">
-                  {next.frontmatter.title} <span>&#10095;</span>
+                <Link
+                  className="nextLink"
+                  to={`/writings` + next.fields.slug}
+                  rel="next"
+                >
+                  {next.frontmatter.title} <NextArrow>&#10095;</NextArrow>
                 </Link>
               )}
             </li>
           </ul>
         </Nav>
-      </Container>
+      </Wrapper>
     </Layout>
   )
 }
