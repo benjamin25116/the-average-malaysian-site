@@ -1,4 +1,4 @@
-const siteUrl = `https://www.theaveragemalaysian.com`
+
 
 module.exports = {
   siteMetadata: {
@@ -26,56 +26,39 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        query: `{
-          site {
-            siteMetadata {
-              siteUrl
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
             }
-          }
-          allSitePage {
-            edges {
-              node {
+            allSitePage {
+              nodes {
                 path
               }
             }
           }
-          allMarkdownRemark {
-            edges {
-              node {
-                fields {
-                  slug
-                }
-              }
-            }
-          }
-        }`,
-        serialize: ({ site, allSitePage, allMarkdownRemark }) => {
-          let pages = []
-          allSitePage.edges.map(edge => {
-            pages.push({
-              url: site.siteMetadata.siteUrlNoSlash + edge.node.path,
-              changefreq: `daily`,
-              priority: 0.7,
-            })
-          })
-          allMarkdownRemark.edges.map(edge => {
-            pages.push({
-              url: `${site.siteMetadata.siteUrlNoSlash}/${edge.node.fields.slug}`,
-              changefreq: `daily`,
-              priority: 0.7,
-            })
-          })
-
-          return pages
-        },
+        `,
+        serialize: ({ path }) => ({
+          url: path,
+        }),
       },
     },
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://www.theaveragemalaysian.com",
-        sitemap: "https://www.theaveragemalaysian.com/sitemap.xml",
-        policy: [{ userAgent: "*", allow: "/" }],
+        sitemap: "https://www.theaveragemalaysian.com/sitemap/sitemap-0.xml",
+        policy: [
+          {
+            userAgent: "*",
+            allow: "/",
+            disallow: "/404.html",
+            disallow: "/404/",
+            disallow: "/dev-404-page/",
+          },
+        ],
       },
     },
     `gatsby-plugin-image`,
