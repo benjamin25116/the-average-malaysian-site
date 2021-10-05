@@ -21,7 +21,7 @@ h1 {
 }
 
 p {
-  line-height: 1.8rem;
+  line-height: 2rem;
   font-size: 1.1rem;
 }
 

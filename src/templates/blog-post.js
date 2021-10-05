@@ -8,11 +8,11 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import Variables from "../components/StyleConstants"
 
-const maxWidth = "667px"
+const maxWidth = Variables.blog.maxWidth
 
 const Container = styled.div`
   padding: 2rem 1rem;
-  max-width: 1280px;
+  max-width: ${maxWidth};
   margin: 0 auto;
 `
 const Header = styled.header`
