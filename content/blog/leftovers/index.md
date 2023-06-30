@@ -12,10 +12,20 @@ What started as a careful and thoughtful marriage turned into a daily routine. W
 
 That needs to change. Here's how I can do it:
 
-1. **It starts with changing how I think.** This is the easiest part because I'm in control of my thoughts and actions. Right now, I decide to be a loving dad and husband on purpose. It's not that hard.
-2. **Actions speak louder than words.** So I need to follow up my new thinking with doing things that show I'm a caring dad and husband. This means greeting my wife and kid with a real smile, a hug, and a kiss when I see them after work. Normally, I do hug my daughter (and kiss her if she lets me), but I don't always do the same for my wife. After that, I'll talk with my wife, really interested in how her day went, who she met, and what's on her mind. Lastly, I'll help with the bedtime routine for my daughter.
-3. As a Christian, I also need to end the day **praying for them**, so that I don't just give them leftovers of my faith. Being a Christian is not just about believing in a higher power. It's about living like Jesus did, caring for and loving others. And Jesus prayed for others.
+### **It starts with changing how I think**
 
-You might read this and think it's too simple: change your thinking, talk more, and pray for them. But even if it's simple, it can make a big difference in how my family and I get along long term. The point is not to make big, flashy changes, but to build strong basics. Nothing lasts on a weak foundation.
+This is the easiest part because I'm in control of my thoughts and actions. Right now, I decide to be a loving dad and husband on purpose. It's not that hard.
+
+### **Actions speak louder than words.** 
+
+So I need to follow up my new thinking with doing things that show I'm a caring dad and husband. This means greeting my wife and kid with a real smile, a hug, and a kiss when I see them after work. Normally, I do hug my daughter (and kiss her if she lets me), but I don't always do the same for my wife. After that, I'll talk with my wife, really interested in how her day went, who she met, and what's on her mind. Lastly, I'll help with the bedtime routine for my daughter.
+
+### **Praying for Them**
+
+As a Christian, I also need to end the day praying for them so that I don't just give them leftovers of my faith. Being a Christian is not just about believing in a higher power. It's about living like Jesus did, caring for and loving others. And Jesus prayed for others.
+
+Too simple?
+
+Maybe it sound simple: change your thinking, talk more, and pray for them. But even if it's simple, it can make a big difference in how my family and I get along long term. The point is not to make big, flashy changes, but to build strong basics. Nothing lasts on a weak foundation.
 
 No more leftovers for my family. From now on, they get the best of me.
