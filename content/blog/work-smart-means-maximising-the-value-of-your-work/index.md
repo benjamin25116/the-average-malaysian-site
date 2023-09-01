@@ -11,15 +11,18 @@ author: Benjamin
 There are a few things here that comes to mind: 
 
 1. How do I estimate the value of work?
+
 2. How do I practically prioritise the activities that contributes to this?
+
 3. What does it mean to apply intense targeted effort?
 
 ## The Value of Work
 
 I've come across two value equations thus far:
 
-* (benefit to others x quality) /  time taken to do it—This one seems pretty self-explanatory.
-* (dream outcome x perceived likelihood of achievement) / (time delay x effort or sacrifice)
+• (benefit to others x quality) /  time taken to do it—This one seems pretty self-explanatory.
+
+• (dream outcome x perceived likelihood of achievement) / (time delay x effort or sacrifice)
 
 The second one is from the perspective of the client or person receiving the value. If the client doesn't think you're likely to achieve the dream outcome, the perceived value is zero. Likewise, if the client has to make a great sacrifice or put in effort for it, the perceived value approaches zero. These two equations gives us a model to estimate the value of the work we do daily. 
 
@@ -36,7 +39,9 @@ From this perspective, if our work benefits people around us in a way that helps
 Building on what we have understood above, maybe this list can help with prioritising our work: 
 
 1. Work which directly improves profitability
+
 2. Work which indirectly improves profitability
+
 3. Work which benefits others in the company, but may not improve profitability
 
 If the task or project doesn't meet any of the above, it shouldn't be done at all because there's no value it to the company. Sure, you might still choose to do it nonetheless, but you won't be appreciated by your boss for wasting company resources on things that are of no value to the company. 
