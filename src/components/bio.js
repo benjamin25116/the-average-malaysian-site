@@ -48,7 +48,7 @@ const Bio = ({ benjamin, huey_lin }) => {
 
   // Set these values by editing "siteMetadata" in gatsby-config.js
   const [ben] = data.site.siteMetadata?.author.author.filter(
-    author => author.name === "Benjamin"
+    author => author.name === "Ben"
   )
   const [lin] = data.site.siteMetadata?.author.author.filter(
     author => author.name === "Huey Lin"
