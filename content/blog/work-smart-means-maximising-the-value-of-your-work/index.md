@@ -20,7 +20,7 @@ There are a few things here that comes to mind:
 I've come across two value equations thus far:
 
 - (benefit to others x quality) / time taken to do it—This one seems pretty self-explanatory.
-  \*(dream outcome x perceived likelihood of achievement) / (time delay x effort or sacrifice)
+- (dream outcome x perceived likelihood of achievement) / (time delay x effort or sacrifice)
 
 The second one is from the perspective of the client or person receiving the value. If the client doesn't think you're likely to achieve the dream outcome, the perceived value is zero. Likewise, if the client has to make a great sacrifice or put in effort for it, the perceived value approaches zero. These two equations gives us a model to estimate the value of the work we do daily.
 
@@ -57,7 +57,8 @@ I'm curious to try out the list above with my current todo list. Let's see...
 - Execute on social media plan for outlet launch—client A
 - Populate social media calendar for next month—client A
 - Produce video content for next month—client A
-  _Some context: Client A pays more than B, who pays more than C._
+
+_Some context: Client A pays more than B, who pays more than C._
 
 I'm going to reorder according to client size, then identify which tasks can be **delegated, dropped, or delayed**, so I can focus on the ones that are more important. This results in a list that is in two parts:
 

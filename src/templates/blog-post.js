@@ -55,7 +55,7 @@ const Post = styled.article`
 
   li::marker {
     content: "• ";
-    font-size: 1%.75;
+    font-size: 1.75rem;
     padding-right: 10px;
   }
 
