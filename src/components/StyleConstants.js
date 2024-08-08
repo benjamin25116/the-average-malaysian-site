@@ -1,11 +1,11 @@
 const StyleConstants = {
   color: {
-    lightestGrey: "#ededed",
+    lightestGrey: "#f8f8f8",
     lighterGrey: "#DDD",
     lightGrey: "#888",
     darkGrey: "#666",
     darkerGrey: "#444",
-    lighterBrown: "#f7e9d9",
+    lighterBrown: "#fdf6ef",
     lightBrown: "#e9c49a",
   },
   font: {
@@ -16,11 +16,11 @@ const StyleConstants = {
     height: "60px",
   },
   blog: {
-    maxWidth: "667px"
+    maxWidth: "667px",
   },
   footer: {
-    minHeight: "100px"
-  }
+    minHeight: "50px",
+  },
 }
 
 export default StyleConstants

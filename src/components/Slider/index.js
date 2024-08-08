@@ -35,6 +35,7 @@ const Heading = styled.h2`
   font-size: 2rem;
   text-align: center;
   margin-bottom: 0.5rem;
+  max-width: 600px;
 
   @media (max-width: 567px) {
     font-size: 1.5rem;
@@ -47,7 +48,7 @@ const Description = styled.span`
   @media (max-width: 567px) {
     font-size: 0.8rem;
   }
-  `
+`
 const StyledLink = styled(Link)`
   border: 1px solid white;
   border-radius: 0.15rem;
@@ -72,8 +73,9 @@ const Button = styled.button`
   border-top: 1px solid white;
   cursor: pointer;
   :hover {
-    color: ${Variables.color.darkGrey};
-    border-top: 1px solid ${Variables.color.darkGrey};
+    background-color: ${Variables.color.lightBrown};
+    /* color: ${Variables.color.darkGrey};
+    border-top: 1px solid ${Variables.color.darkGrey}; */
   }
 `
 const PrevPost = styled(Button)`

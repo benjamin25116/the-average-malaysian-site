@@ -9,7 +9,7 @@ const Background = styled.footer`
 const Container = styled.div`
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1.5rem;
   font-size: 0.9rem;
   text-align: center;
   p,

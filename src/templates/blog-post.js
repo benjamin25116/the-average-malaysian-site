@@ -73,14 +73,14 @@ const Post = styled.article`
   }
 
   blockquote {
-    border-left: 3px solid ${Variables.color.lightGrey};
+    border-left: 2px solid ${Variables.color.lightBrown};
     font-style: italic;
     padding: 0px 30px;
   }
 
   blockquote > p {
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 `
 const Nav = styled.nav`
