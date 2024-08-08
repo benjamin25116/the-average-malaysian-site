@@ -34,14 +34,24 @@ const Description = styled.span`
   margin-bottom: 0.3rem;
   text-align: center;
 `
-const Post = styled.section`
+const Post = styled.article`
   max-width: ${maxWidth};
   margin: 0 auto;
   padding: 2rem 0;
 
+  :first-letter {
+    font-weight: 700;
+    font-size: 3rem;
+  }
+
   h2 {
-    margin-top: 3rem;
-    margin-bottom: 0rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+
+  blockquote {
+    border-left: 10px solid ${Variables.color.lightGrey};
+    font-style: italic;
   }
 `
 const Nav = styled.nav`
