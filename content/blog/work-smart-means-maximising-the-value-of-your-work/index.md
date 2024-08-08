@@ -11,19 +11,16 @@ author: Benjamin
 
 There are a few things here that comes to mind:
 
-    1. How do I estimate the value of work?
-
-    2. How do I practically prioritise the activities that contributes to this?
-
-    3. What does it mean to apply intense targeted effort?
+1. How do I estimate the value of work?
+2. How do I practically prioritise the activities that contributes to this?
+3. What does it mean to apply intense targeted effort?
 
 ## The Value of Work
 
 I've come across two value equations thus far:
 
-    • (benefit to others x quality) /  time taken to do it—This one seems pretty self-explanatory.
-
-    • (dream outcome x perceived likelihood of achievement) / (time delay x effort or sacrifice)
+- (benefit to others x quality) / time taken to do it—This one seems pretty self-explanatory.
+  \*(dream outcome x perceived likelihood of achievement) / (time delay x effort or sacrifice)
 
 The second one is from the perspective of the client or person receiving the value. If the client doesn't think you're likely to achieve the dream outcome, the perceived value is zero. Likewise, if the client has to make a great sacrifice or put in effort for it, the perceived value approaches zero. These two equations gives us a model to estimate the value of the work we do daily.
 
@@ -39,11 +36,9 @@ From this perspective, if our work benefits people around us in a way that helps
 
 Building on what we have understood above, maybe this list can help with prioritising our work:
 
-    1. Work which directly improves profitability
-
-    2. Work which indirectly improves profitability
-
-    3. Work which benefits others in the company, but may not improve profitability
+1. Work which directly improves profitability
+2. Work which indirectly improves profitability
+3. Work which benefits others in the company, but may not improve profitability
 
 If the task or project doesn't meet any of the above, it shouldn't be done at all because there's no value it to the company. Sure, you might still choose to do it nonetheless, but you won't be appreciated by your boss for wasting company resources on things that are of no value to the company.
 
@@ -55,29 +50,29 @@ Also, in all three cases, there is the implicit directive to "do no harm". This 
 
 I'm curious to try out the list above with my current todo list. Let's see...
 
-    * Coordinate shoot with photographer—client B
-    * Prepare photo shoot timeline—client B
-    * Prepare topics to be included into newsletter—client B
-    * Flesh out webpage write up for developer—client C
-    * Execute on social media plan for outlet launch—client A
-    * Populate social media calendar for next month—client A
-    * Produce video content for next month—client A
-    _Some context: Client A pays more than B, who pays more than C.
+- Coordinate shoot with photographer—client B
+- Prepare photo shoot timeline—client B
+- Prepare topics to be included into newsletter—client B
+- Flesh out webpage write up for developer—client C
+- Execute on social media plan for outlet launch—client A
+- Populate social media calendar for next month—client A
+- Produce video content for next month—client A
+  _Some context: Client A pays more than B, who pays more than C._
 
 I'm going to reorder according to client size, then identify which tasks can be **delegated, dropped, or delayed**, so I can focus on the ones that are more important. This results in a list that is in two parts:
 
 **For me to work on**
 
-    * Execute on social media plan for outlet launch—client A
-    * Populate social media calendar for next month—client A
-    * Prepare topics to be included into newsletter—client B
-    * Flesh out webpage write up for developer—client C (delay, since this is my own initiative and not requested by the client)
+- Execute on social media plan for outlet launch—client A
+- Populate social media calendar for next month—client A
+- Prepare topics to be included into newsletter—client B
+- Flesh out webpage write up for developer—client C (delay, since this is my own initiative and not requested by the client)
 
 **For me to delegate**
 
-    * Produce video content for next month—client A (delegate to lead videographer)
-    * Prepare photo shoot timeline—client B (delegate to to photographer)
-    * Coordinate shoot with photographer—client B (delegate to photographer)
+- Produce video content for next month—client A (delegate to lead videographer)
+- Prepare photo shoot timeline—client B (delegate to to photographer)
+- Coordinate shoot with photographer—client B (delegate to photographer)
 
 With this updated, focused list, I now need to apply intense targeted effort on these items to optimise the value of it to my company. Otherwise, I can't be said to be working smart, just being lazy.
 
@@ -87,20 +82,20 @@ Hopefully, we should have more time on our hands now to apply "intense targeted 
 
 Consider the first task at hand, **executing on social media content**. How can I increase the intensity of how I do the task by 10x? What would that look like? I suppose it might look something like this:
 
-    * chunk out time to knock it out
-    * quit my email and WhatsApp applications
-    * remove distractions from my surrounding by moving to a quiet place or putting on headphones
-    * not getting up from the table until the task is done—no water or toilet breaks
-    * identify all the factors that might impact content engagement
-    	* spend time identifying audience personas for the content
-    	* research best practices for content in the client industry
-    		* research relatable content ideas
-    		* keep content authentic
-    		* give value in each content
-    		* have an opinion
-    		* double down on client niche
-    * use AI tools to brainstorm content ideas
-    * work in categories—complete all writing, then look for images / videos, then edit, etc.
+- chunk out time to knock it out
+- quit my email and WhatsApp applications
+- remove distractions from my surrounding by moving to a quiet place or putting on headphones
+- not getting up from the table until the task is done—no water or toilet breaks
+- identify all the factors that might impact content engagement
+  - spend time identifying audience personas for the content
+  - research best practices for content in the client industry
+    - research relatable content ideas
+    - keep content authentic
+    - give value in each content
+    - have an opinion
+    - double down on client niche
+- use AI tools to brainstorm content ideas
+- work in categories—complete all writing, then look for images / videos, then edit, etc.
 
 To be honest, that's a lot of work to do for one task. If I didn't have time to do all the above, I would have just used an AI tool to get content idea and then flesh them out enough to be posted. Done. Efficient? Maybe. Effective? Hardly. That's why working smart requires me to delegate, drop, or delay other less important tasks.
 
