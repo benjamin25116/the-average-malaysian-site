@@ -12,19 +12,19 @@ import styled from "styled-components"
 import Variables from "../components/StyleConstants"
 
 const Container = styled.div`
-max-width: ${Variables.blog.maxWidth};
-margin: 0 auto 2rem;
-display: grid;
-grid-template-columns: 1fr 3fr;
-grid-template-rows: auto;
-place-items: center start;
+  max-width: ${Variables.blog.maxWidth};
+  margin: 0 auto 2rem;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto;
+  place-items: center start;
 
-p {
-  padding-left: 1rem;
-  font-size: 1rem;
-  line-height: 1.25rem;
-  color: ${Variables.color.lightGrey};
-}
+  p {
+    padding-left: 1rem;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    color: ${Variables.color.lightGrey};
+  }
 `
 
 const Bio = ({ benjamin, huey_lin }) => {
@@ -71,12 +71,12 @@ const Bio = ({ benjamin, huey_lin }) => {
         {ben.name && (
           <p>
             Written by <strong>{ben.name}</strong>. {ben.summary || null}
-            {` `}
+            {/* {` `}
             <a
               href={`https://www.youtube.com/channel/${social?.youtube || ``}`}
             >
               Check out their YouTube channel.
-            </a>
+            </a> */}
           </p>
         )}
       </Container>

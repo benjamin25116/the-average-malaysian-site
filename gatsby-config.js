@@ -5,7 +5,7 @@ module.exports = {
       author: [
         {
           name: `Benjamin`,
-          summary: `Husband, father, child of God. Married to Huey Lin.`,
+          summary: `Husband, father, child of God. Married to Huey Lin. Spen 8 years working as a teacher before transitioning into a creative role. Currently leading a team of creatives in a marketing startup as a Creative Director.`,
         },
         {
           name: `Huey Lin`,
@@ -14,7 +14,7 @@ module.exports = {
       ],
     },
 
-    description: `The "average malaysian" comprises of diverse people, each with their unique experience, perspective and culture. Here you will find stories, lessons, and encouragement from one "average malaysian" to another.`,
+    description: `Personal blogs of Ben and Huey Lin, the self-proclaimed "average Malaysian". Here you will find stories, lessons, and encouragement from two average Malaysians to you.`,
     siteUrl: `https://www.theaveragemalaysian.com`,
     social: {
       youtube: `UC6cpBoxdvVpMNz2u_NMHMJw`,
