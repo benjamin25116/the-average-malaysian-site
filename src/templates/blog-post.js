@@ -44,14 +44,30 @@ const Post = styled.article`
     font-size: 3rem;
   }
 
+  ul {
+    padding-left: 20px;
+  }
+
+  li {
+    margin-bottom: 5px;
+  }
+
+  li::marker {
+    content: "• ";
+    font-size: 1.2em;
+    padding-right: 5px;
+  }
+
   h2 {
     font-size: 1.5rem;
     margin-bottom: 0.3rem;
+    margin-top: 3rem;
   }
 
   blockquote {
-    border-left: 10px solid ${Variables.color.lightGrey};
+    border-left: 6px solid ${Variables.color.lightGrey};
     font-style: italic;
+    padding: 0px 30px;
   }
 `
 const Nav = styled.nav`
