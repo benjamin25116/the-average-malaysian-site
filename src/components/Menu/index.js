@@ -113,7 +113,7 @@ export default function Menu({ title }) {
     <Wrapper>
       <NavBar>
         <HomeLink to="/">
-          <h1>{title}</h1>
+          <span>{title}</span>
         </HomeLink>
         <MenuButton onClick={handleClick}>
           {isOpen ? (
