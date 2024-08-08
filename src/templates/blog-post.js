@@ -98,7 +98,10 @@ const BlogPostTemplate = ({ data, location }) => {
             <Heading itemProp="headline">{post.frontmatter.title}</Heading>
             <Description>{`By ${post.frontmatter.author} • ${post.frontmatter.date}`}</Description>
             <Description>{`${post.timeToRead}-minute read`}</Description>
-            <Link style={{textAlign: "center", marginTop: "1rem"}} to="/writings">
+            <Link
+              style={{ textAlign: "center", marginTop: "1rem" }}
+              to="/writings"
+            >
               <PrevArrow>&#10094;</PrevArrow>Back to all writings
             </Link>
             <GatsbyImage image={image} alt="" />

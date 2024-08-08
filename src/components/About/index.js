@@ -39,7 +39,8 @@ export default function About() {
       <Title>the&nbsp;a.m.</Title>
       <Body>
         stands for “the average malaysian”. It's a term we've all heard of, but
-        really, <em>no one is average</em>. The "average malaysian" comprises of diverse people, each with their unique experience, perspective and
+        really, <em>no one is average</em>. The "average malaysian" comprises of
+        diverse people, each with their unique experience, perspective and
         culture. Here you will find stories, lessons, and encouragement from one
         "average malaysian" to another.
       </Body>
