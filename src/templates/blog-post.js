@@ -65,6 +65,12 @@ const Post = styled.article`
     margin-top: 3rem;
   }
 
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+    margin-top: 2.5rem;
+  }
+
   blockquote {
     border-left: 6px solid ${Variables.color.lightGrey};
     font-style: italic;
