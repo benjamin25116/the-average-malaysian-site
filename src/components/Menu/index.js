@@ -25,7 +25,7 @@ const NavBar = styled.nav`
     padding: 0 2rem;
   }
   a,
-  span {
+  h2 {
     text-decoration: none;
     color: ${Variables.color.lightGrey};
   }
@@ -113,7 +113,7 @@ export default function Menu({ title }) {
     <Wrapper>
       <NavBar>
         <HomeLink to="/">
-          <title>{title}</title>
+          <h2>{title}</h2>
         </HomeLink>
         <MenuButton onClick={handleClick}>
           {isOpen ? (
