@@ -38,11 +38,9 @@ export default function About() {
     <Container>
       <Title>the&nbsp;a.m.</Title>
       <Body>
-        stands for “the average malaysian”. It's a term we've all heard of, but
-        really, <em>no one is average</em>. The "average malaysian" comprises of
-        diverse people, each with their unique experience, perspective and
-        culture. Here you will find stories, lessons, and encouragement from one
-        "average malaysian" to another.
+        stands for “the average Malaysian”. This is the personal blog of two
+        average Malaysians who are based in Kuala Lumpur. Here, we share our
+        unique experiences, perspectives, and lessons learnt.
       </Body>
     </Container>
   )

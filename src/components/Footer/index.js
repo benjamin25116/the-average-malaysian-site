@@ -3,8 +3,8 @@ import styled from "styled-components"
 import Variables from "../StyleConstants"
 
 const Background = styled.footer`
-  background-color: ${Variables.color.lighterGrey};
-min-height: ${Variables.footer.minHeight};
+  background-color: ${Variables.color.lightestGrey};
+  min-height: ${Variables.footer.minHeight};
 `
 const Container = styled.div`
   max-width: 1280px;
@@ -29,9 +29,6 @@ export default function Footer() {
         <p>
           © the average malaysian,{` `}
           {new Date().getFullYear()} <br />
-          Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
         </p>
       </Container>
     </Background>
