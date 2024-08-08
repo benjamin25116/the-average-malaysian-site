@@ -51,6 +51,7 @@ const Post = styled.article`
 
   li {
     line-height: 1.75rem;
+    font-size: 1.1rem;
   }
 
   li::marker {
@@ -72,9 +73,14 @@ const Post = styled.article`
   }
 
   blockquote {
-    border-left: 6px solid ${Variables.color.lightGrey};
+    border-left: 3px solid ${Variables.color.lightGrey};
     font-style: italic;
     padding: 0px 30px;
+  }
+
+  blockquote > p {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 `
 const Nav = styled.nav`
@@ -135,7 +141,7 @@ const BlogPostTemplate = ({ data, location }) => {
               style={{ textAlign: "center", marginTop: "1rem" }}
               to="/writings"
             >
-              <PrevArrow>&#10094;</PrevArrow>Back to all writings
+              Back to all writings
             </Link>
             <GatsbyImage image={image} alt="" />
           </Header>
@@ -171,6 +177,7 @@ const BlogPostTemplate = ({ data, location }) => {
                   className="nextLink"
                   to={`/writings` + next.fields.slug}
                   rel="next"
+                  style={{ textAlign: "right" }}
                 >
                   {next.frontmatter.title} <NextArrow>&#10095;</NextArrow>
                 </Link>

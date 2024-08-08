@@ -15,7 +15,7 @@ const Container = styled.div`
   max-width: ${Variables.blog.maxWidth};
   margin: 0 auto 2rem;
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 5fr;
   grid-template-rows: auto;
   place-items: center start;
 
@@ -98,12 +98,12 @@ const Bio = ({ benjamin, huey_lin }) => {
         {lin.name && (
           <p>
             Written by <strong>{lin.name}</strong> {lin.summary || null}
-            {` `}
+            {/* {` `}
             <a
               href={`https://www.youtube.com/channel/${social?.youtube || ``}`}
             >
               Check out their YouTube channel.
-            </a>
+            </a> */}
           </p>
         )}
       </Container>

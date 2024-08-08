@@ -4,12 +4,12 @@ module.exports = {
     author: {
       author: [
         {
-          name: `Benjamin`,
-          summary: `Husband, father, child of God. Married to Huey Lin. Spen 8 years working as a teacher before transitioning into a creative role. Currently leading a team of creatives in a marketing startup as a Creative Director.`,
+          name: `Ben`,
+          summary: `Husband, father, child of God. Married to Huey Lin. Spent 8 years working as a teacher before transitioning into a creative role. Currently leading a team of creatives in a marketing startup as a Creative Director.`,
         },
         {
           name: `Huey Lin`,
-          summary: `who lives and works in Sentul, Kuala Lumpur serving urban poor children. Married to Benjamin.`,
+          summary: `who chose to be a stay-at-home mom in this season to spend more time intentionally with her children. Married to Benjamin.`,
         },
       ],
     },
