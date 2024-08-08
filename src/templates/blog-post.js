@@ -44,18 +44,19 @@ const Post = styled.article`
     font-size: 3rem;
   }
 
-  ul {
+  ul,
+  ol {
     padding-left: 20px;
   }
 
   li {
-    margin-bottom: 5px;
+    line-height: 1.75rem;
   }
 
   li::marker {
     content: "• ";
-    font-size: 1.2em;
-    padding-right: 5px;
+    font-size: 1%.75;
+    padding-right: 10px;
   }
 
   h2 {
