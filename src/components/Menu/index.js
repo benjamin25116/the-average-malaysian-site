@@ -50,7 +50,7 @@ const HomeLink = styled(Link)`
   grid-row: 1 / 2;
   grid-column: 1 / 5;
   place-self: center start;
-  h1 {
+  title {
     padding: 0;
     margin: 0;
   }
