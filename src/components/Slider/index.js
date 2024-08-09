@@ -59,7 +59,7 @@ const StyledLink = styled(Link)`
   text-align: center;
 
   :hover {
-    color: ${Variables.color.darkGrey};
+    background-color: ${Variables.color.lightBrown};
     border: 1px solid ${Variables.color.darkGrey};
   }
 `
